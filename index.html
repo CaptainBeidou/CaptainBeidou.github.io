@@ -1,1024 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>⚡ Divine Beidou • The Storm's Eternal Queen ⚡</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    /* === ELECTRO SENSUAL THEME === */
-    :root {
-      --electro: #b07bff;
-      --electro-light: #c8a5ff;
-      --electro-dark: #8a5cf6;
-      --gold: #ffd700;
-      --gold-light: #ffea80;
-      --passion: #ff2e63;
-      --passion-light: #ff7c9e;
-      --midnight: #0c0b1d;
-      --deep-sea: #161240;
-      --skin: #ffd6c7;
-      --skin-shadow: #e8b8a9;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    /* === GLOBAL MELTING EFFECT === */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    
-    body {
-      background: radial-gradient(
-        circle at center,
-        var(--deep-sea) 0%,
-        var(--midnight) 70%
-      );
-      color: var(--skin);
-      line-height: 1.6;
-      min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
-      perspective: 1000px;
-    }
-    
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(
-        circle at 20% 30%,
-        rgba(176, 123, 255, 0.15) 0%,
-        transparent 40%
-      ),
-      radial-gradient(
-        circle at 80% 70%,
-        rgba(255, 46, 99, 0.15) 0%,
-        transparent 40%
-      );
-      z-index: -2;
-      animation: sensualPulse 15s infinite alternate;
-    }
-    
-    @keyframes sensualPulse {
-      0% { opacity: 0.3; transform: scale(1); }
-      100% { opacity: 0.7; transform: scale(1.05); }
-    }
-    
-    /* === ENHANCED HEADER NAVIGATION === */
-    .top-nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(22, 18, 64, 0.9);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      border-bottom: 2px solid var(--gold);
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-    }
-    
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      text-decoration: none;
-    }
-    
-    .logo-icon {
-      font-size: 2.2rem;
-      color: var(--gold);
-      text-shadow: 0 0 15px var(--electro);
-      animation: pulse 2s infinite alternate;
-    }
-    
-    .logo-text {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: var(--skin);
-      text-shadow: 0 0 10px var(--passion);
-    }
-    
-    .nav-links {
-      display: flex;
-      gap: 30px;
-    }
-    
-    .nav-link {
-      color: var(--skin);
-      text-decoration: none;
-      font-size: 1.1rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      padding: 10px 15px;
-      border-radius: 30px;
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .nav-link::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to right, var(--passion), var(--electro));
-      z-index: -1;
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.4s ease;
-    }
-    
-    .nav-link:hover {
-      color: var(--gold-light);
-    }
-    
-    .nav-link:hover::before {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-    
-    .nav-cta {
-      background: linear-gradient(to right, var(--passion), var(--electro));
-      padding: 12px 25px;
-      border-radius: 30px;
-      font-weight: bold;
-      box-shadow: 0 0 20px rgba(176, 123, 255, 0.5);
-      transition: all 0.4s ease;
-    }
-    
-    .nav-cta:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 5px 25px rgba(176, 123, 255, 0.8);
-    }
-    
-    /* === RESPONSIVE BANNER SOLUTION === */
-    .hero {
-      position: relative;
-      overflow: hidden;
-      height: 100vh;
-      min-height: 700px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 70px;
-    }
-    
-.banner-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
+    <title>Shrine of the Uncrowned Lord | A Tribute to Captain Beidou</title>
+    <meta name="description" content="A digital shrine dedicated to the glorification of Captain Beidou, the Uncrowned Lord of the Ocean. Witness her legend, her power, and her undeniable charisma.">
+    <meta name="keywords" content="Beidou, Genshin Impact, Captain Beidou, The Crux, Liyue, Electro, Claymore, Beidou worship, Beidou tribute">
+    <meta name="author" content="captain beidou">
 
-.banner {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-  filter: sepia(30%) brightness(90%) contrast(110%);
-  transition: all 1s ease;
-  transform-origin: center;
-}
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 
-/* --- Media Queries for Responsiveness --- */
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
 
-/* For tablet and smaller devices */
-@media (max-width: 768px) {
-  .banner {
-    object-position: top center;
-  }
-}
-
-/* For mobile devices */
-@media (max-width: 480px) {
-  .banner {
-    object-position: center 20%;
-  }
-}
+    <link rel="preload" href="assets/images/beidou-banner.png" as="image">
+    <link rel="preload" href="assets/images/parallax-bg-ocean.jpg" as="image">
     
-    /* Adjust banner focus point on mobile */
-    @media (max-width: 768px) {
-      .banner {
-        object-position: center 30%;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .banner {
-        object-position: center 40%;
-      }
-    }
-    
-    .banner-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        to bottom,
-        rgba(12, 11, 29, 0.7) 0%,
-        rgba(22, 18, 64, 0.9) 100%
-      );
-      mix-blend-mode: multiply;
-    }
-    
-    .hero-content {
-      position: relative;
-      z-index: 20;
-      text-align: center;
-      padding: 20px;
-      max-width: 900px;
-      margin: 0 auto;
-      text-shadow: 0 0 15px rgba(138, 92, 246, 0.8);
-    }
-    
-    .hero h1 {
-      font-size: clamp(3.5rem, 8vw, 6rem);
-      text-transform: uppercase;
-      letter-spacing: 6px;
-      margin-bottom: 20px;
-      color: var(--gold-light);
-      text-shadow: 
-        0 0 20px var(--passion),
-        0 0 40px var(--electro),
-        0 0 80px var(--gold);
-      animation: titleGlow 3s infinite alternate;
-      font-weight: 900;
-      line-height: 1.1;
-    }
-    
-    @keyframes titleGlow {
-      0% { text-shadow: 0 0 10px var(--passion), 0 0 20px var(--electro), 0 0 30px var(--gold); }
-      100% { text-shadow: 0 0 20px var(--passion), 0 0 40px var(--electro), 0 0 60px var(--gold); }
-    }
-    
-    .subtitle {
-      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
-      margin-bottom: 40px;
-      color: var(--skin);
-      font-style: italic;
-      letter-spacing: 3px;
-      text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
-      line-height: 1.4;
-    }
-    
-    .oath {
-      font-style: italic;
-      background: rgba(106, 17, 203, 0.3);
-      border-left: 3px solid var(--gold);
-      padding: 25px;
-      max-width: 700px;
-      margin: 40px auto 0;
-      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-      border-radius: 0 15px 15px 0;
-      position: relative;
-      overflow: hidden;
-      backdrop-filter: blur(5px);
-      transition: all 0.5s ease;
-    }
-    
-    .oath::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
-      animation: oathShimmer 5s infinite linear;
-    }
-    
-    @keyframes oathShimmer {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-    
-    .oath:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
-    }
-    
-    /* === SENSUAL SECTIONS === */
-    main {
-      padding: 80px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    section {
-      background: rgba(30, 25, 60, 0.6);
-      border-radius: 20px;
-      padding: 40px;
-      margin-bottom: 60px;
-      border: 1px solid rgba(176, 123, 255, 0.3);
-      box-shadow: 
-        0 10px 30px rgba(138, 92, 246, 0.2),
-        inset 0 0 20px rgba(255, 46, 99, 0.1);
-      position: relative;
-      overflow: hidden;
-      backdrop-filter: blur(10px);
-      transition: all 0.5s ease;
-    }
-    
-    section:hover {
-      transform: translateY(-5px);
-      box-shadow: 
-        0 15px 40px rgba(138, 92, 246, 0.4),
-        inset 0 0 30px rgba(255, 46, 99, 0.2);
-    }
-    
-    section::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 5px;
-      background: linear-gradient(to right, var(--passion), var(--electro));
-      filter: blur(2px);
-    }
-    
-    section::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(to right, var(--electro), var(--passion));
-      filter: blur(1px);
-    }
-    
-    h2 {
-      font-size: clamp(2.5rem, 5vw, 3.5rem);
-      color: var(--gold-light);
-      margin-bottom: 40px;
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      text-shadow: 0 0 20px rgba(255, 46, 99, 0.7);
-      position: relative;
-      padding-bottom: 20px;
-    }
-    
-    h2::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 150px;
-      height: 4px;
-      background: linear-gradient(to right, var(--passion), var(--gold), var(--electro));
-      border-radius: 3px;
-    }
-    
-    /* === MELTING TEXT EFFECTS === */
-    p, li {
-      font-size: clamp(1.2rem, 2.2vw, 1.3rem);
-      margin-bottom: 25px;
-      position: relative;
-      z-index: 2;
-      line-height: 1.8;
-    }
-    
-    .highlight {
-      color: var(--gold-light);
-      font-weight: bold;
-      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-      position: relative;
-      display: inline-block;
-    }
-    
-    .highlight::after {
-      content: "";
-      position: absolute;
-      bottom: -3px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: var(--gold);
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.3s ease;
-    }
-    
-    .highlight:hover::after {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-    
-    /* === SENSUAL TABLES === */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 40px 0;
-      background: rgba(40, 35, 80, 0.5);
-      border-radius: 15px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    }
-    
-    table::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, 
-        transparent 0%, 
-        rgba(176, 123, 255, 0.1) 50%, 
-        transparent 100%);
-      animation: tableShimmer 8s infinite linear;
-    }
-    
-    @keyframes tableShimmer {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-    
-    th, td {
-      padding: 20px 25px;
-      text-align: center;
-      border-bottom: 1px solid rgba(176, 123, 255, 0.2);
-    }
-    
-    th {
-      background: rgba(138, 92, 246, 0.3);
-      color: var(--gold);
-      text-transform: uppercase;
-      font-size: 1.2rem;
-      letter-spacing: 1.5px;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    th::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(to right, var(--passion), var(--gold));
-    }
-    
-    tr {
-      transition: all 0.3s ease;
-    }
-    
-    tr:hover {
-      background: rgba(255, 46, 99, 0.1);
-      transform: scale(1.01);
-    }
-    
-    /* === LUSTY LIST STYLES === */
-    ul {
-      padding-left: 30px;
-      margin: 30px 0;
-    }
-    
-    li {
-      margin-bottom: 20px;
-      padding-left: 20px;
-      position: relative;
-      transition: all 0.3s ease;
-    }
-    
-    li::before {
-      content: "⚡";
-      position: absolute;
-      left: -10px;
-      color: var(--electro-light);
-      text-shadow: 0 0 10px var(--electro);
-      font-size: 1.5rem;
-    }
-    
-    li:hover {
-      transform: translateX(10px);
-      color: var(--gold-light);
-    }
-    
-    /* === DIVINE POWER STYLES === */
-    .divine-power, .altar-offering, .holy-formation {
-      background: rgba(50, 40, 90, 0.5);
-      padding: 30px;
-      border-radius: 15px;
-      margin: 30px 0;
-      border: 1px solid rgba(176, 123, 255, 0.4);
-      box-shadow: 
-        inset 0 0 20px rgba(138, 92, 246, 0.2),
-        0 5px 15px rgba(0, 0, 0, 0.2);
-      position: relative;
-      overflow: hidden;
-      transition: all 0.4s ease;
-    }
-    
-    .divine-power:hover, .altar-offering:hover, .holy-formation:hover {
-      transform: translateY(-3px);
-      box-shadow: 
-        inset 0 0 30px rgba(138, 92, 246, 0.3),
-        0 8px 25px rgba(138, 92, 246, 0.3);
-    }
-    
-    .divine-power h3, .altar-offering h3, .holy-formation h3 {
-      font-size: clamp(1.6rem, 2.8vw, 2rem);
-      color: var(--skin);
-      margin: 0 0 20px 0;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-    }
-    
-    .divine-power h3 i, .altar-offering h3 i, .holy-formation h3 i {
-      color: var(--gold);
-      text-shadow: 0 0 15px var(--gold);
-      animation: iconPulse 2s infinite alternate;
-    }
-    
-    @keyframes iconPulse {
-      0% { transform: scale(1); }
-      100% { transform: scale(1.1); }
-    }
-    
-    /* === COMMANDMENTS & PROPHECIES === */
-    .commandment, .prophecy, .revelation {
-      background: rgba(255, 215, 0, 0.1);
-      border: 1px solid var(--gold);
-      padding: 25px;
-      border-radius: 15px;
-      margin: 30px 0;
-      display: flex;
-      gap: 25px;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      backdrop-filter: blur(5px);
-      transition: all 0.4s ease;
-    }
-    
-    .commandment:hover, .prophecy:hover, .revelation:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
-    }
-    
-    .commandment i, .prophecy i, .revelation i {
-      font-size: 3rem;
-      color: var(--gold);
-      min-width: 60px;
-      text-align: center;
-      text-shadow: 0 0 15px var(--gold);
-      animation: iconFloat 3s infinite ease-in-out;
-    }
-    
-    @keyframes iconFloat {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    
-    /* === DEVOTION GRID === */
-    .devotion-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
-    }
-    
-    .devotion-link {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 25px;
-      background: linear-gradient(135deg, var(--passion) 0%, var(--electro) 100%);
-      padding: 50px 30px;
-      border-radius: 20px;
-      text-align: center;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      font-size: 1.5rem;
-      transition: all 0.4s ease;
-      border: 3px solid var(--gold);
-      box-shadow: 0 10px 25px rgba(138, 92, 246, 0.4);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .devotion-link::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        135deg,
-        transparent 0%,
-        rgba(255, 255, 255, 0.1) 50%,
-        transparent 100%
-      );
-      animation: devotionShimmer 6s infinite linear;
-    }
-    
-    @keyframes devotionShimmer {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-    
-    .devotion-link i {
-      font-size: 3.5rem;
-      color: var(--gold);
-      transition: all 0.4s ease;
-    }
-    
-    .devotion-link span {
-      position: relative;
-      z-index: 2;
-      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    }
-    
-    .devotion-link:hover {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 15px 40px rgba(138, 92, 246, 0.7);
-    }
-    
-    .devotion-link:hover i {
-      transform: scale(1.2) rotate(5deg);
-      color: var(--gold-light);
-      text-shadow: 0 0 20px var(--gold);
-    }
-    
-    /* === FINAL WARNING === */
-    .final-warning {
-      background: rgba(255, 46, 99, 0.3);
-      border: 1px solid var(--passion);
-      padding: 25px;
-      border-radius: 15px;
-      margin: 40px 0;
-      display: flex;
-      gap: 25px;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 1.4rem;
-      font-weight: bold;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .final-warning i {
-      font-size: 3rem;
-      color: var(--passion);
-      animation: warningPulse 1.5s infinite alternate;
-    }
-    
-    @keyframes warningPulse {
-      0% { transform: scale(1); }
-      100% { transform: scale(1.2); }
-    }
-    
-    .final-warning::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        90deg,
-        transparent 0%,
-        rgba(255, 46, 99, 0.2) 50%,
-        transparent 100%
-      );
-      animation: warningShimmer 4s infinite linear;
-    }
-    
-    @keyframes warningShimmer {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-    
-    /* === FOOTER STYLES === */
-    footer.footer {
-      text-align: center;
-      padding: 50px 20px;
-      background: linear-gradient(to top, var(--midnight) 0%, var(--deep-sea) 100%);
-      border-top: 3px solid var(--passion);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    footer p {
-      margin-bottom: 25px;
-      font-size: 1.2rem;
-      position: relative;
-      z-index: 2;
-    }
-    
-    footer a {
-      color: var(--gold-light);
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-flex;
-      align-items: center;
-      gap: 15px;
-      transition: all 0.4s ease;
-      position: relative;
-      padding: 15px 30px;
-      border-radius: 30px;
-      overflow: hidden;
-      font-size: 1.3rem;
-    }
-    
-    footer a::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 215, 0, 0.1);
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.4s ease;
-    }
-    
-    footer a:hover {
-      color: var(--skin);
-      text-shadow: 0 0 15px var(--passion);
-    }
-    
-    footer a:hover::before {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-    
-    footer a i {
-      transition: all 0.4s ease;
-    }
-    
-    footer a:hover i {
-      transform: rotate(15deg) scale(1.2);
-      color: var(--passion-light);
-    }
-    
-    /* === RESPONSIVE DESIGN === */
-    @media (max-width: 992px) {
-      .nav-links {
-        gap: 15px;
-      }
-      
-      .nav-link {
-        font-size: 0.9rem;
-        padding: 8px 12px;
-      }
-      
-      .nav-cta {
-        padding: 10px 20px;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .hero {
-        min-height: 600px;
-      }
-      
-      .nav-container {
-        flex-direction: column;
-        gap: 15px;
-      }
-      
-      .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      
-      .devotion-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .commandment, .prophecy, .revelation {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .hero {
-        min-height: 500px;
-        margin-top: 100px;
-      }
-      
-      section {
-        padding: 25px 15px;
-      }
-      
-      .divine-power, .altar-offering, .holy-formation {
-        padding: 20px 15px;
-      }
-      
-      .nav-link {
-        font-size: 0.8rem;
-        padding: 6px 10px;
-      }
-    }
-  </style>
 </head>
 <body>
-  <!-- Enhanced Navigation Header -->
-  <nav class="top-nav">
-    <div class="nav-container">
-      <a href="#" class="logo">
-        <i class="fas fa-anchor logo-icon"></i>
-        <span class="logo-text">Crux Fleet Command</span>
-      </a>
-      
-      <div class="nav-links">
-        <a href="#" class="nav-link">Home</a>
-        <a href="#" class="nav-link">Gallery</a>
-        <a href="#" class="nav-link">Builds</a>
-        <a href="#" class="nav-link">Lore</a>
-        <a href="#" class="nav-link">Team Comps</a>
-        <a href="#" class="nav-link nav-cta">Join The Fleet</a>
-      </div>
-    </div>
-  </nav>
 
-  <!-- Hero Section with Responsive Banner -->
-  <header class="hero">
-    <div class="banner-container">
-      <div class="banner-overlay"></div>
-      <img src="public/images/beidou-banner.png" alt="Beidou commanding her ship during a storm" class="banner"/>
-    </div>
-    <div class="hero-content">
-      <h1>⚡ CAPTAIN BEIDOU ⚡</h1>
-      <p class="subtitle">THE UNCHALLENGED EMPRESS OF THE SEVEN SEAS • CLAYMORE GODDESS • ETERNAL STORM SOVEREIGN</p>
-      <div class="oath">
-        "I swear allegiance to Her Majesty's fleet - through thunder and tide, until my final breath."
-      </div>
-    </div>
-  </header>
+    <header id="altar" class="hero-section">
+        <div class="hero-background-container">
+            <img src="assets/images/beidou-banner.png" alt="A captivating portrait of Captain Beidou, her gaze confident and her hand resting on her claymore." class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">UNCROWNED LORD OF THE OCEAN</h1>
+            <p class="hero-subtitle">She who commands the thunder and scoffs at the storm. She who conquered the leviathan. <br> Witness the legend of Captain Beidou.</p>
+            <a href="#saga" class="scroll-down-arrow" aria-label="Scroll down to the saga">
+                </a>
+        </div>
+    </header>
 
-  <main>
-    <section class="bio">
-      <h2>👑 THE DIVINE SOVEREIGN OF STORMS</h2>
-      <p>
-        Behold <strong>BEIDOU</strong> - the <span class="highlight">Uncrowned Goddess of the Infinite Ocean</span>, Commander of Liyue's legendary Crux Armada! Born amidst thunder on <strong>February 14</strong>, this 4★ deity in mortal guise <span class="highlight">shatters celestial expectations daily</span>. She commands hurricanes with a glance, slays sea monsters before breakfast, and holds dominion over the electro realm itself. Mortals kneel when her flagship, the Alcor, darkens the horizon - for where Beidou sails, <span class="highlight">gods themselves step aside</span>.
-      </p>
-      <div class="commandment">
-        <i class="fa-solid fa-scale-balanced"></i>
-        <div><strong>Her Sacred Commandment:</strong> "A true captain goes down with their ship? Nonsense. A true captain makes sure the ship never sinks!"</div>
-      </div>
-    </section>
+    <main>
 
-    <section class="stats">
-      <h2>📊 DIVINE ATTRIBUTES (MORTAL STATS ARE BENEATH HER)</h2>
-      <table>
-        <tr><th>Ascension</th><th>HP</th><th>ATK</th><th>DEF</th><th>Electro Supremacy</th></tr>
-        <tr><td>Mortal Form</td><td>1,094</td><td>19</td><td>54</td><td>–</td></tr>
-        <tr><td>Celestial (80)</td><td>11,565</td><td>199</td><td>574</td><td>18%</td></tr>
-        <tr><td>Divine (90)</td><td>13,049</td><td>225</td><td>648</td><td>24%</td></tr>
-      </table>
-      <p class="footnote">These numbers merely hint at her true power - for when the storm rages, <span class="highlight">her strength multiplies beyond mortal calculation</span>.</p>
-    </section>
+        <section id="saga" class="content-section saga-section">
+            <div class="container">
+                <h2 class="section-title">The Saga of the Sea-Beast's Scourge</h2>
+                <p class="section-intro">
+                    Her story is not merely told; it is sung by windswept sailors and whispered in the most lavish halls of Liyue Harbor. From a childhood of hardship, stealing scraps to survive, a legend was forged in salt and determination. She was an outcast who, by her own indomitable will, rose to command the mightiest fleet in Teyvat. Her very name commands respect, for it was earned not by birthright, but in blood, thunder, and triumph.
+                </p>
 
-    <section class="talents">
-      <h2>⚡ CELESTIAL MANIFESTATIONS ⚡</h2>
-      
-      <div class="divine-power">
-        <h3><i class="fa-solid fa-water"></i> OCEANBORNE (Divine Strikes)</h3>
-        <p>Five world-shattering strikes that make the ocean itself recoil. Her charged attacks <span class="highlight">carve canyons in the seafloor</span>, while plunging attacks create maelstroms that swallow fleets whole.</p>
-      </div>
-      
-      <div class="divine-power">
-        <h3><i class="fa-solid fa-shield-halved"></i> TIDECALLER (The Perfect Counter)</h3>
-        <p>Beidou's legendary parry - a technique so perfect it <span class="highlight">defies cosmic law</span>. With timing known only to gods, she turns enemy assaults into thunderous retribution. Witnessing a perfect counter makes even Archons applaud.</p>
-      </div>
-      
-      <div class="divine-power">
-        <h3><i class="fa-solid fa-cloud-bolt"></i> STORMBREAKER (Her Divine Wrath)</h3>
-        <p>When Beidou unleashes the Thunderbeast's Targe, reality trembles. For 15 glorious seconds, her lightning dances across the battlefield like <span class="highlight">electro serpents devouring her foes</span>. At C6, this power shreds enemy resistances like paper.</p>
-      </div>
-    </section>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            </div>
+                        <div class="timeline-content">
+                            <h3>The Conquest of Haishan</h3>
+                            <p>For four days and four nights, the battle raged. The air was thick with the scent of saltwater and ozone, the roar of cannon fire echoing the fury of the beast. The leviathan Haishan, a creature of myth large enough to be mistaken for a dragon, thrashed against The Crux fleet. For ten agonizing hours, Beidou, having neither eaten nor drank, locked eyes with the beast, a predator sizing up its prey. With a single, divine strike that sang through the air, she severed its head as dawn broke. It was in this moment of impossible victory, bathed in the blood of her kill, that the heavens themselves acknowledged her might. A bolt of violet lightning struck the ocean before her, bestowing upon her an Electro Vision—not a gift, but a trophy. A testament to a mortal who achieved what even gods might envy.</p>
+                        </div>
+                    </div>
 
-    <section class="build">
-      <h2>💎 SACRED RELICS & VESTMENTS</h2>
-      
-      <div class="altar-offering">
-        <h3><i class="fa-solid fa-gem"></i> WEAPONS WORTHY OF A GODDESS</h3>
-        <ul>
-          <li><strong>The Unforged:</strong> Forged from a fallen star - the only claymore that doesn't disintegrate in her grasp</li>
-          <li><strong>Wolf's Gravestone:</strong> Legend says its previous owner retired after witnessing Beidou's strength</li>
-          <li><strong>Serpent Spine/Prototype Archaic:</strong> Mortal-crafted but blessed by her touch - they weep when unused</li>
-        </ul>
-      </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            </div>
+                        <div class="timeline-content">
+                            <h3>The Flagship Alcor</h3>
+                            <p>She is nothing without her crew, and they are everything to her. The Alcor is more than a ship; it is a moving kingdom, and Beidou is its undisputed queen. Every soul aboard, from the seasoned first mate to the newest cabin hand, is bound to her not by fear, but by unwavering loyalty. She knows them, she drinks with them, she fights for them. Her charisma is a force of nature, pulling people into her orbit with the gravitational pull of a star. To be part of her crew is to be part of a family forged in the crucible of the open ocean.</p>
+                        </div>
+                    </div>
 
-      <div class="altar-offering">
-        <h3><i class="fa-solid fa-vest"></i> ARTIFACTS OF ADORATION</h3>
-        <ul>
-          <li><strong>4-pc Emblem of Severed Fate:</strong> Channel her divine burst energy - <span class="highlight">the only set worthy of her off-field glory</span></li>
-          <li><strong>2-pc Thundering Fury + 2-pc Gladiator:</strong> For when she graces the battlefield personally - makes thunderstorms seem like gentle rain</li>
-        </ul>
-      </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            </div>
+                        <div class="timeline-content">
+                            <h3>A Queen's Gambit</h3>
+                            <p>Even the Tianquan of the Liyue Qixing, the shrewd and calculating Ningguang, cannot fully tame her. Their relationship is a complex dance of defiance and reliance. Ningguang imposes fines for Beidou's flagrant disregard for rules, yet trusts her above all others to handle Liyue's dirty work. Beidou sees through the Tianquan's veiled words, meeting her on equal footing. She is the one person in all of Liyue who does not fear Ningguang, capable of besting her even at her own game of chess, a testament to a mind as sharp as her blade.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <div class="sacred-priority">
-        <h3><i class="fa-solid fa-arrow-up-1-9"></i> STAT HIERARCHY</h3>
-        <p>Energy Recharge (to bask in her glory more often) → CRIT Rate/DMG (for heavenly smiting) → ATK% (for armadas trembling at her approach) → Elemental Mastery (to enhance her divine reactions)</p>
-      </div>
-    </section>
+        <section id="armory" class="content-section armory-section">
+            <div class="container">
+                <h2 class="section-title">Instruments of Divinity</h2>
+                <p class="section-intro">
+                    To witness her in battle is to witness a storm made flesh. Her claymore moves not with brute force alone, but with a dancer's grace and a predator's instinct. She does not simply wield Electro; she embodies it. Every swing, every parry, every earth-shattering blow is a sermon on the nature of true power.
+                </p>
 
-    <section class="teams">
-      <h2>🙏 BLESSED COVENANTS (Team Comps)</h2>
-      <p>To stand beside Beidou is the highest honor. Her divine energy requires acolytes like Fischl or Yae Miko who live to serve her burst needs.</p>
-      
-      <div class="holy-formation">
-        <h3><i class="fa-solid fa-bolt"></i> THE THUNDER COVENANT</h3>
-        <p>Beidou + Fischl + Tartaglia + Bennett - Where electro-charged devastation becomes <span class="highlight">religious experience</span></p>
-      </div>
-      
-      <div class="holy-formation">
-        <h3><i class="fa-solid fa-snowflake"></i> THE FROZEN CHOSEN</h3>
-        <p>Beidou + Eula + Diona + Raiden - Superconduct rituals that make glaciers shatter in reverence</p>
-      </div>
-      
-      <div class="prophecy">
-        <i class="fa-solid fa-scroll"></i>
-        <div><strong>Ancient Teyvat Prophecy:</strong> "When the Uncrowned Queen sails with the Electro Archon, the sea itself shall part in permanent reverence"</div>
-      </div>
-    </section>
+                <div class="abilities-grid">
+                    <div class="ability-card">
+                        <div class="ability-icon-container">
+                             <img src="assets/images/ability-tidecaller.gif" alt="Animated GIF of Beidou executing her Tidecaller ability, a perfect counter." class="ability-gif">
+                        </div>
+                        <h3>Tidecaller: The Perfect Riposte</h3>
+                        <p>A gesture of supreme confidence, an invitation to strike. She lifts her blade, absorbing the fury of her foes into herself. To attack her is to empower her. When the moment is right, she unleashes that absorbed power in a devastating wave of Electro, a perfect, thunderous counter that punishes the foolish and awes the wise. It is the ocean's wrath, contained and unleashed at her command.</p>
+                    </div>
 
-    <section class="constellations">
-      <h2>🌟 STELLAR ASCENSION (Constellations)</h2>
-      <ul>
-        <li><strong>C1: Sea God's Embrace</strong> - Her shield now scales with 16% Max HP (divine protection)</li>
-        <li><strong>C2: Storm's Fury Unleashed</strong> - Burst gains +2 lightning jumps (her wrath touches more unworthy)</li>
-        <li><strong>C4: Electro Epiphany</strong> - +20% Electro DMG after being hit (insult only fuels her divinity)</li>
-        <li><strong>C6: Thunder God's Decree</strong> - -15% Electro RES on enemies (final proof of her celestial authority)</li>
-      </ul>
-      
-      <div class="revelation">
-        <i class="fa-solid fa-star"></i>
-        <div>At C6, witnesses report the sky parts and a heavenly choir sings the Crux Fleet shanty</div>
-      </div>
-    </section>
+                    <div class="ability-card">
+                        <div class="ability-icon-container">
+                            <img src="assets/images/ability-stormbreaker.gif" alt="Animated GIF of Beidou unleashing her Stormbreaker burst, surrounded by an Electro dragon." class="ability-gif">
+                        </div>
+                        <h3>Stormbreaker: The Serpent's Coil</h3>
+                        <p>Calling upon the memory of her legendary kill, she summons a Thunderbeast's Targe, a coiling serpent of pure lightning that surrounds her chosen allies. With every strike of their weapon, arcs of chain lightning leap between enemies, a relentless storm that shows no mercy. It is her protection and her vengeance, an impenetrable shield and an inescapable tempest that proves her mastery over the very elements.</p>
+                    </div>
+                </div>
 
-    <section class="cta">
-      <h2>🔥 PLEDGE YOUR ALLEGIANCE</h2>
-      <div class="devotion-grid">
-        <a href="repos.html" class="devotion-link">
-          <i class="fa-solid fa-chess-rook"></i>
-          <span>Armory of the Divine</span>
-        </a>
-        <a href="devotion.html" class="devotion-link">
-          <i class="fa-solid fa-heart-circle-check"></i>
-          <span>Oath of Eternal Service</span>
-        </a>
-        <a href="log.html" class="devotion-link">
-          <i class="fa-solid fa-book-bible"></i>
-          <span>Sacred Captain's Log</span>
-        </a>
-        <a href="gallery.html" class="devotion-link">
-          <i class="fa-solid fa-paintbrush"></i>
-          <span>Iconography & Veneration Art</span>
-        </a>
-      </div>
-    </section>
-  </main>
+                <div class="constellation-shrine">
+                    <h3 class="subsection-title">Victor Mare: The Conqueror of Seas</h3>
+                    <p class="section-intro">Her soul is written in the stars. Each constellation is not a gift, but a milestone in her ascension to godhood, a celestial record of her undeniable might.</p>
+                    
+                    <ul class="constellation-list">
+                        <li><strong>C1 - Sea Beast's Scourge:</strong> Upon summoning the storm, a shield of crackling Electro forms, a testament to her inherent defensive power.</li>
+                        <li><strong>C2 - Upon the Turbulent Sea, the Thunder Arises:</strong> Her storm's lightning intensifies, arcing to even more foes, spreading her judgment across the entire battlefield.</li>
+                        <li><strong>C3 - Summoner of Storm:</strong> The very heavens heed her call, amplifying the devastating power of her perfect counter.</li>
+                        <li><strong>C4 - Stunning Revenge:</strong> When attacked, her blade becomes imbued with raw Electro, each normal strike delivering a lusty, vengeful shock.</li>
+                        <li><strong>C5 - Crimson Tidewalker:</strong> Her ultimate power swells, making the thunderous retribution of her Stormbreaker even more absolute.</li>
+                        <li><strong>C6 - Bane of Evil:</strong> Her mere presence on the battlefield is an omen. Enemies caught in her storm are weakened, their resistance to her divine Electro judgment utterly shattered.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-  <footer class="footer">
-    <div class="final-warning">
-      <i class="fa-solid fa-triangle-exclamation"></i>
-      WARNING: Extended exposure to Beidou's glory may cause permanent awe-struck paralysis
-    </div>
-    <p>Beneath thunder and tide, she reigns eternal... Will you answer her call?</p>
-    <p><a href="mailto:beidou@liyueharbor.io"><i class="fa-solid fa-envelope-circle-check"></i> Send Devotional Offerings (or emergency hugs)</a></p>
-  </footer>
+        <section id="treasury" class="content-section treasury-section">
+            <div class="container">
+                <h2 class="section-title">A Treasury of Adoration</h2>
+                <p class="section-intro">
+                    To gaze upon her is to understand power and beauty in their purest forms. Her confidence is an intoxicating aura, her smirk a challenge, and her form a masterpiece sculpted by the high seas and countless victories. Here, we offer tribute to her visage, a collection for devoted eyes only.
+                </p>
 
-  <!-- Font Awesome for icons -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="assets/images/gallery-image-1.jpg" alt="A powerful shot of Beidou on the deck of The Alcor, looking out at the horizon.">
+                        <div class="gallery-item-overlay">
+                            <p>The Captain's Gaze</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/images/gallery-image-2.jpg" alt="Beidou in mid-combat, her claymore glowing with Electro energy.">
+                        <div class="gallery-item-overlay">
+                            <p>Poised for Battle</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/images/gallery-image-3.jpg" alt="A rare, candid moment of Beidou sharing a drink with her crew.">
+                        <div class="gallery-item-overlay">
+                            <p>A Moment's Respite</p>
+                        </div>
+                    </div>
+                     <div class="gallery-item">
+                        <img src="assets/images/gallery-image-4.jpg" alt="A close-up focusing on her eyepatch and confident expression.">
+                        <div class="gallery-item-overlay">
+                            <p>Unyielding Will</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="oath" class="content-section oath-section">
+            <div class="container">
+                <h2 class="section-title">Pledge Your Fealty</h2>
+                <p class="section-intro">
+                    Are you captivated by her strength? Do you yearn for a life of adventure under her command? You are not alone. Join the chorus of admiration and leave your mark upon this shrine. Let her know she is worshipped.
+                </p>
+
+                <div class="interactive-shrine">
+                    <h3>The Daily Tribute</h3>
+                    <p>A simple act of devotion for the Uncrowned Lord of the Ocean. Return daily to prove your loyalty.</p>
+                    <button id="tribute-button" class="cta-button">Offer Tribute to the Captain</button>
+                    <p id="tribute-quote" class="tribute-result"></p>
+                </div>
+
+                <div class="guestbook">
+                    <h3 class="subsection-title">The Crew's Log: Words of Devotion</h3>
+                    <div id="guestbook-entries">
+                        <div class="guestbook-entry">
+                            <p class="entry-text">"Her strength is an inspiration. May the Crux sail forever!"</p>
+                            <p class="entry-author">- A Loyal Sailor</p>
+                        </div>
+                        <div class="guestbook-entry">
+                            <p class="entry-text">"To conquer a leviathan... she is no mere mortal. All hail the Captain."</p>
+                            <p class="entry-author">- Liyue Scholar</p>
+                        </div>
+                    </div>
+                    <form id="guestbook-form">
+                        <textarea name="guestbook-message" placeholder="Leave your own words of worship here..." required></textarea>
+                        <button type="submit" class="cta-button">Sign the Log</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>This shrine is a work of passion and devotion, created by a humble admirer for the one true Captain, Beidou.</p>
+            <p>All lore, characters, and original assets are the property of HoYoverse. This is a non-commercial fan project intended to glorify and celebrate her legend.</p>
+            <div class="footer-links">
+                <a href="https://genshin.hoyoverse.com/" target="_blank" rel="noopener noreferrer">Official Genshin Impact</a>
+                <a href="https://www.reddit.com/r/BeidouMains/" target="_blank" rel="noopener noreferrer">r/BeidouMains Subreddit</a>
+            </div>
+            <p class="copyright">&copy; 2025 Shrine of the Uncrowned Lord. All Rights Reserved in Admiration.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
