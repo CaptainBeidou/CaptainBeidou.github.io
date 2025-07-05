@@ -1,142 +1,217 @@
-/* styles/main.css */
+/* === Divine Theme: Beidou, Empress of Storms === */
 
-/* === Variables === */
 :root {
-  --electro-purple: #9b59b6;
-  --electro-pink: #ff80c1;
-  --electro-blue: #5dade2;
-  --bg-dark: #1c1c2e;
-  --bg-deep: #14141f;
-  --text-light: #fdfdff;
-  --accent-glow: 0 0 10px var(--electro-purple);
-  --font-cute: 'Segoe UI', 'Poppins', sans-serif;
-}
-
-/* === Reset & Base === */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  --main-color: #8b3a62;
+  --highlight: #ffaad4;
+  --background: #1b1425;
+  --text: #fdf0f9;
+  --accent: #e4bfff;
+  --lightning: #bfa9ff;
+  --gold: #ffd700;
 }
 
 body {
-  font-family: var(--font-cute);
-  background: linear-gradient(135deg, var(--bg-dark), var(--bg-deep));
-  color: var(--text-light);
-  line-height: 1.6;
-  padding: 1rem;
+  margin: 0;
+  padding: 0;
+  font-family: 'Cinzel Decorative', serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+h1, h2, h3 {
+  color: var(--gold);
+  text-shadow: 0 0 10px var(--highlight), 0 0 20px var(--lightning);
 }
 
-/* === Hero Banner === */
+a {
+  color: var(--highlight);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--gold);
+  text-shadow: 0 0 5px var(--highlight);
+}
+
+/* === Hero === */
 .hero {
   text-align: center;
-  margin-bottom: 2rem;
+  background: linear-gradient(to bottom, #2c1d33, #1b1425);
+  padding: 2rem 1rem;
+  border-bottom: 2px solid var(--lightning);
 }
 
 .banner {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
   border-radius: 1rem;
-  box-shadow: var(--accent-glow);
   margin-bottom: 1rem;
+  box-shadow: 0 0 20px var(--lightning);
 }
 
-h1 {
-  font-size: 2.5rem;
-  color: var(--electro-pink);
-  text-shadow: var(--accent-glow);
-}
-
-.subtitle {
-  font-size: 1.2rem;
-  color: var(--electro-blue);
-  font-style: italic;
-  margin-top: 0.3rem;
-}
-
-/* === Navigation === */
-.nav ul {
-  list-style: none;
+.crowning-glory {
+  font-size: 2rem;
+  color: var(--gold);
   display: flex;
   justify-content: center;
   gap: 1rem;
-  padding: 1rem 0;
-}
-
-.nav a {
-  text-decoration: none;
-  color: var(--text-light);
-  padding: 0.5rem 1rem;
-  background-color: var(--electro-purple);
-  border-radius: 0.8rem;
-  transition: background 0.3s, transform 0.2s;
-}
-
-.nav a:hover {
-  background-color: var(--electro-pink);
-  transform: scale(1.1);
-}
-
-/* === Main Content === */
-main {
-  max-width: 800px;
-  margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 0 20px rgba(155, 89, 182, 0.4);
-}
-
-main h2 {
-  color: var(--electro-blue);
   margin-bottom: 1rem;
+  animation: pulse-glow 3s ease-in-out infinite;
 }
 
-.cta ul {
-  list-style: none;
-  padding: 1rem 0;
+.subtitle {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--accent);
+  margin-top: -0.5rem;
 }
 
-.cta li {
-  margin: 0.5rem 0;
+.oath {
+  margin-top: 1rem;
   font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-left: 4px solid var(--highlight);
+  font-style: italic;
 }
 
-.cta a {
-  color: var(--electro-pink);
-  text-decoration: underline;
+/* === Sections === */
+main section {
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 1000px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(255, 170, 212, 0.1);
+}
+
+.highlight {
+  color: var(--highlight);
+  font-weight: bold;
+}
+
+.commandment,
+.prophecy,
+.revelation {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-left: 5px solid var(--lightning);
+  font-style: italic;
+}
+
+/* === Table Styling === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  border: 1px solid var(--highlight);
+  padding: 0.75rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+th {
+  background: var(--highlight);
+  color: var(--background);
+}
+
+.footnote {
+  font-size: 0.9rem;
+  color: var(--accent);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* === Talent & Build Sections === */
+.divine-power,
+.altar-offering,
+.sacred-priority,
+.holy-formation {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 5px solid var(--accent);
+  border-radius: 0.5rem;
+}
+
+ul {
+  list-style-type: "⚡ ";
+  padding-left: 1.5rem;
+}
+
+/* === CTA Buttons === */
+.devotion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.devotion-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  border: 1px solid var(--lightning);
+  transition: all 0.3s ease-in-out;
+}
+
+.devotion-link:hover {
+  background: var(--highlight);
+  color: var(--background);
+  transform: scale(1.05);
 }
 
 /* === Footer === */
 .footer {
-  margin-top: 3rem;
   text-align: center;
-  font-size: 0.9rem;
-  color: #aaa;
+  padding: 2rem;
+  background: #140e1d;
+  border-top: 2px solid var(--lightning);
+  font-size: 0.95rem;
+  color: var(--accent);
 }
 
-.footer a {
-  color: var(--electro-blue);
-  text-decoration: none;
+.final-warning {
+  margin-bottom: 1rem;
+  color: var(--gold);
+  font-weight: bold;
 }
 
-.footer a:hover {
-  text-decoration: underline;
+/* === Animations === */
+@keyframes pulse-glow {
+  0% {
+    text-shadow: 0 0 5px var(--gold), 0 0 10px var(--highlight);
+  }
+  50% {
+    text-shadow: 0 0 20px var(--highlight), 0 0 40px var(--lightning);
+  }
+  100% {
+    text-shadow: 0 0 5px var(--gold), 0 0 10px var(--highlight);
+  }
 }
 
-/* === Cute Additions === */
-::selection {
-  background: var(--electro-pink);
-  color: white;
-}
-
-@media (max-width: 600px) {
-  .nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
+/* === Responsive Grace === */
+@media (max-width: 768px) {
+  .banner {
+    max-height: 200px;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+  .devotion-grid {
+    grid-template-columns: 1fr;
   }
 }
