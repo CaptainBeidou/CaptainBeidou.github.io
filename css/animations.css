@@ -1,0 +1,140 @@
+/*
+=================================================================
+I. KEN BURNS EFFECT (THE ALTAR'S BREATH)
+This gives the hero image a slow, hypnotic, and constant motion.
+It feels alive, like it's breathing. This is pure addiction.
+=================================================================
+*/
+@keyframes kenBurnsEffect {
+    0% {
+        transform: scale(1) translate(0, 0);
+    }
+    50% {
+        transform: scale(1.1) translate(-2%, 2%);
+    }
+    100% {
+        transform: scale(1) translate(0, 0);
+    }
+}
+
+/*
+=================================================================
+II. FADE-IN ANIMATION (THE REVEAL)
+For content appearing gracefully as you scroll. It's sensual,
+like a slow reveal, making you want to scroll more.
+=================================================================
+*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*
+=================================================================
+III. SCROLL ARROW (THE SIREN'S CALL)
+A gentle, pulsing guide, begging you to descend deeper
+into the shrine. Impossible to ignore.
+=================================================================
+*/
+@keyframes scrollWheel {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    75% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+}
+
+/*
+=================================================================
+IV. LUSTY GLOW (THE AURA OF POWER)
+For buttons and interactive elements. It's a warm, inviting,
+and dominant purple glow that makes you *need* to click.
+=================================================================
+*/
+@keyframes lustyGlow {
+    0% {
+        box-shadow: 0 0 10px var(--royal-purple), 0 0 20px var(--lust-purple);
+    }
+    50% {
+        box-shadow: 0 0 25px var(--royal-purple), 0 0 40px var(--lust-purple);
+    }
+    100% {
+        box-shadow: 0 0 10px var(--royal-purple), 0 0 20px var(--lust-purple);
+    }
+}
+
+/* Apply this class with JavaScript or directly for a constant glow */
+.glowing-element {
+    animation: lustyGlow 3s infinite ease-in-out;
+}
+
+/*
+=================================================================
+V. GOLD SHIMMER (TREASURE'S GLINT)
+For the main titles. A subtle, sexy shimmer that catches the
+eye, like light glinting off a freshly won treasure.
+=================================================================
+*/
+@keyframes goldShimmer {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.3), 0 0 20px rgba(255, 215, 0, 0.2);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.7), 0 0 35px rgba(255, 215, 0, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.3), 0 0 20px rgba(255, 215, 0, 0.2);
+    }
+}
+
+/* You can apply this animation to any H1 or H2 for that extra "hawttt" effect */
+.proclamation-section .hero-title, .section-title {
+    animation: goldShimmer 4s infinite ease-in-out;
+}
+
+/*
+=================================================================
+VI. FLOATING PARTICLES (MUSTY ATMOSPHERE)
+This creates a magical, dusty, almost sacred atmosphere.
+Like motes of dust and magic floating in a forgotten temple.
+This requires adding a #particles-js div in your HTML body.
+(This is a placeholder for a JS library like particles.js,
+but we can create a pure CSS fallback.)
+=================================================================
+*/
+/* This is a simplified, pure CSS version. No extra HTML needed. */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: transparent;
+    background-image:
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><circle fill="%23782F98" cx="5" cy="5" r="1"/></svg>'),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><circle fill="%23FFD700" cx="5" cy="5" r="0.5"/></svg>');
+    background-repeat: repeat;
+    background-size: 300px, 500px;
+    animation: float 60s infinite linear;
+    opacity: 0.1;
+    z-index: -10;
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-500px, -500px); }
+}
