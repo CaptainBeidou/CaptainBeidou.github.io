@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Lato:wght@300;400;700&display=swap');
+
+:root {
+    --lust-purple: #4a0e63; /* A deep, dominant, bitchy purple */
+    --royal-purple: #782F98; /* A brighter, more electric purple for highlights */
+    --musty-gold: #FFD700; /* The color of treasure, slightly desaturated for a 'musty' feel */
+    --text-color: #EAE0F8; /* A soft, pale lavender for readability */
+    --dark-ocean: #0a080c; /* Deeper than black */
+    --card-bg: rgba(14, 11, 22, 0.6); /* Translucent, dark purple card background */
+    
+    --font-heading: 'Cinzel Decorative', serif; /* A font for a queen */
+    --font-body: 'Lato', sans-serif; /* A font for the scriptures */
+}
+
+/*
+=================================================================
+II. GLOBAL STYLING & RESET
+Setting the stage. The canvas for my worship must be perfect.
+Smooth scrolling to calm the mind, perfect text rendering.
+=================================================================
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--dark-ocean);
+    background-image: radial-gradient(circle at 20% 20%, var(--lust-purple) 0%, var(--dark-ocean) 40%);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--musty-gold);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3), 0 0 20px rgba(255, 215, 0, 0.2);
+    font-weight: 700;
+}
+
+p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+a {
+    color: var(--musty-gold);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #fff;
+    text-shadow: 0 0 15px var(--royal-purple);
+}
+
+/*
+=================================================================
+III. NAVIGATION BAR
+A fixed compass, always present, guiding the faithful.
+=================================================================
+*/
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 8, 12, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(120, 47, 152, 0.3);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px var(--musty-gold);
+    border-bottom-color: var(--musty-gold);
+}
+
+
+/*
+=================================================================
+IV. HERO SECTION (THE ALTAR)
+Her divine image. This must be overpowering, addictive.
+The first hit of calm for the brain.
+=================================================================
+*/
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    /* The animation will be in animations.css */
+    animation: kenBurnsEffect 20s infinite;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(10, 8, 12, 0.2) 0%, rgba(10, 8, 12, 0.9) 85%);
+}
+
+.hero-content {
+    z-index: 1;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    letter-spacing: 4px;
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    max-width: 800px;
+    margin: 1rem auto 0;
+    color: var(--text-color);
+    font-weight: 400;
+    text-shadow: 1px 1px 3px var(--dark-ocean);
+}
+
+.scroll-down-arrow {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 50px;
+    border: 2px solid var(--musty-gold);
+    border-radius: 50px;
+}
+
+.scroll-down-arrow::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 10px;
+    background: var(--musty-gold);
+    border-radius: 2px;
+    animation: scrollWheel 2s infinite;
+}
+
+/*
+=================================================================
+V. CONTENT SECTIONS
+The body of the shrine. Each section a different room in my digital temple.
+=================================================================
+*/
+
+.content-section {
+    padding: 6rem 0;
+    border-bottom: 1px solid rgba(120, 47, 152, 0.2);
+}
+
+.section-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.section-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+    font-size: 1.2rem;
+    color: rgba(234, 224, 248, 0.8);
+}
+
+.subsection-title {
+    font-size: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(120, 47, 152, 0.2);
+    border-bottom: 1px solid rgba(120, 47, 152, 0.2);
+    padding: 1rem 0;
+}
+
+/*
+=================================================================
+VI. SPECIFIC SECTION STYLES
+The lusty, musty details that make it addictive.
+=================================================================
+*/
+
+/* Details Section */
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    text-align: center;
+}
+.detail-item {
+    background: var(--card-bg);
+    padding: 2rem;
+    border: 1px solid rgba(120, 47, 152, 0.3);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+.detail-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Saga Timeline */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 4rem auto 0;
+}
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background: var(--royal-purple);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1.5px;
+    box-shadow: 0 0 15px var(--royal-purple);
+}
+.timeline-item {
+    padding: 1rem 2.5rem;
+    position: relative;
+    width: 50%;
+}
+.timeline-item:nth-child(odd) {
+    left: 0;
+    padding-right: 4rem;
+    text-align: right;
+}
+.timeline-item:nth-child(even) {
+    left: 50%;
+    padding-left: 4rem;
+    text-align: left;
+}
+.timeline-content {
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid rgba(120, 47, 152, 0.2);
+}
+.timeline-content h3 {
+    font-size: 1.8rem;
+}
+
+/* Armory & Attire (Cards & Lists) */
+.abilities-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 4rem;
+}
+.ability-card, .attire-list li {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border-left: 5px solid var(--royal-purple);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.ability-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px var(--royal-purple);
+}
+.ability-card h3 { font-size: 2rem; }
+.ability-gif { width: 100px; height: 100px; margin-bottom: 1rem; }
+.constellation-list, .attire-list { list-style: none; margin-top: 2rem; }
+.constellation-list li, .attire-list li {
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--musty-gold);
+}
+.constellation-list strong { color: var(--musty-gold); }
+
+
+/* Treasury (The Lusty Gallery) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+.gallery-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+.gallery-item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(10, 8, 12, 1) 0%, transparent 100%);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.gallery-item:hover .gallery-item-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Testament & Oath (Personal Sections) */
+.testament-body { font-size: 1.2rem; font-style: italic; }
+.cta-button {
+    background: var(--musty-gold);
+    color: var(--dark-ocean);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px transparent;
+    display: inline-block;
+    margin-top: 1rem;
+}
+.cta-button:hover {
+    background: #fff;
+    color: var(--lust-purple);
+    box-shadow: 0 0 25px var(--musty-gold);
+    transform: scale(1.05) translateY(-5px);
+}
+.guestbook textarea {
+    width: 100%;
+    height: 150px;
+    background: var(--card-bg);
+    border: 1px solid var(--royal-purple);
+    border-radius: 5px;
+    color: var(--text-color);
+    padding: 1rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+.guestbook textarea:focus {
+    outline: none;
+    box-shadow: 0 0 15px var(--royal-purple);
+}
+
+/*
+=================================================================
+VII. FOOTER
+The final words.
+=================================================================
+*/
+
+.site-footer {
+    padding: 4rem 0;
+    background: var(--dark-ocean);
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(234, 224, 248, 0.6);
+}
+.creator-signature {
+    margin-bottom: 2rem;
+}
+.github-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--musty-gold);
+    border-radius: 5px;
+    margin: 1rem 0;
+    transition: all 0.3s ease;
+}
+.github-link:hover {
+    background: var(--musty-gold);
+    color: var(--dark-ocean);
+    text-shadow: none;
+}
+.footer-links a { margin: 0 1rem; }
+
+
+/*
+=================================================================
+VIII. RESPONSIVE DESIGN
+Ensuring her glory looks perfect on any screen.
+=================================================================
+*/
+
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Simplified nav for mobile */
+    .abilities-grid { grid-template-columns: 1fr; }
+    .timeline::after { left: 30px; }
+    .timeline-item { width: 100%; padding-left: 70px; padding-right: 20px; }
+    .timeline-item:nth-child(odd) { left: 0; text-align: left; }
+    .timeline-item:nth-child(even) { left: 0; text-align: left; }
+}
