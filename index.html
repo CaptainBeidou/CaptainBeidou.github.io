@@ -69,18 +69,115 @@
       100% { opacity: 0.7; transform: scale(1.05); }
     }
     
+    /* === ENHANCED HEADER NAVIGATION === */
+    .top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(22, 18, 64, 0.9);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 2px solid var(--gold);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      text-decoration: none;
+    }
+    
+    .logo-icon {
+      font-size: 2.2rem;
+      color: var(--gold);
+      text-shadow: 0 0 15px var(--electro);
+      animation: pulse 2s infinite alternate;
+    }
+    
+    .logo-text {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--skin);
+      text-shadow: 0 0 10px var(--passion);
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+    
+    .nav-link {
+      color: var(--skin);
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 10px 15px;
+      border-radius: 30px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .nav-link::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, var(--passion), var(--electro));
+      z-index: -1;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.4s ease;
+    }
+    
+    .nav-link:hover {
+      color: var(--gold-light);
+    }
+    
+    .nav-link:hover::before {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+    
+    .nav-cta {
+      background: linear-gradient(to right, var(--passion), var(--electro));
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: bold;
+      box-shadow: 0 0 20px rgba(176, 123, 255, 0.5);
+      transition: all 0.4s ease;
+    }
+    
+    .nav-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 25px rgba(176, 123, 255, 0.8);
+    }
+    
     /* === RESPONSIVE BANNER SOLUTION === */
     .hero {
       position: relative;
       overflow: hidden;
-      height: 80vh;
-      min-height: 500px;
-      max-height: 800px;
+      height: 100vh;
+      min-height: 700px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-bottom: 3px solid var(--passion);
-      box-shadow: 0 20px 50px rgba(138, 92, 246, 0.3);
+      margin-top: 70px;
     }
     
 .banner-container {
@@ -96,7 +193,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Start by centering the image. Adjust as needed. */
   object-position: center center;
   filter: sepia(30%) brightness(90%) contrast(110%);
   transition: all 1s ease;
@@ -108,7 +204,6 @@
 /* For tablet and smaller devices */
 @media (max-width: 768px) {
   .banner {
-    /* Prioritizes the top of the image on smaller screens */
     object-position: top center;
   }
 }
@@ -116,21 +211,20 @@
 /* For mobile devices */
 @media (max-width: 480px) {
   .banner {
-    /* You might need a different position for very small screens */
-    object-position: center 20%; /* Example: 20% from the top */
+    object-position: center 20%;
   }
 }
     
     /* Adjust banner focus point on mobile */
     @media (max-width: 768px) {
       .banner {
-        object-position: center 40%;
+        object-position: center 30%;
       }
     }
     
     @media (max-width: 480px) {
       .banner {
-        object-position: center 50%;
+        object-position: center 40%;
       }
     }
     
@@ -153,15 +247,15 @@
       z-index: 20;
       text-align: center;
       padding: 20px;
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
       text-shadow: 0 0 15px rgba(138, 92, 246, 0.8);
     }
     
     .hero h1 {
-      font-size: clamp(3rem, 7vw, 5rem);
+      font-size: clamp(3.5rem, 8vw, 6rem);
       text-transform: uppercase;
-      letter-spacing: 4px;
+      letter-spacing: 6px;
       margin-bottom: 20px;
       color: var(--gold-light);
       text-shadow: 
@@ -170,6 +264,7 @@
         0 0 80px var(--gold);
       animation: titleGlow 3s infinite alternate;
       font-weight: 900;
+      line-height: 1.1;
     }
     
     @keyframes titleGlow {
@@ -178,22 +273,23 @@
     }
     
     .subtitle {
-      font-size: clamp(1.2rem, 3vw, 1.8rem);
-      margin-bottom: 30px;
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      margin-bottom: 40px;
       color: var(--skin);
       font-style: italic;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+      line-height: 1.4;
     }
     
     .oath {
       font-style: italic;
       background: rgba(106, 17, 203, 0.3);
       border-left: 3px solid var(--gold);
-      padding: 20px;
-      max-width: 600px;
-      margin: 30px auto 0;
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      padding: 25px;
+      max-width: 700px;
+      margin: 40px auto 0;
+      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
       border-radius: 0 15px 15px 0;
       position: relative;
       overflow: hidden;
@@ -224,7 +320,7 @@
     
     /* === SENSUAL SECTIONS === */
     main {
-      padding: 40px 20px;
+      padding: 80px 20px;
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -232,8 +328,8 @@
     section {
       background: rgba(30, 25, 60, 0.6);
       border-radius: 20px;
-      padding: 30px;
-      margin-bottom: 40px;
+      padding: 40px;
+      margin-bottom: 60px;
       border: 1px solid rgba(176, 123, 255, 0.3);
       box-shadow: 
         0 10px 30px rgba(138, 92, 246, 0.2),
@@ -274,15 +370,15 @@
     }
     
     h2 {
-      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
       color: var(--gold-light);
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       text-align: center;
       text-transform: uppercase;
-      letter-spacing: 3px;
-      text-shadow: 0 0 15px rgba(255, 46, 99, 0.7);
+      letter-spacing: 4px;
+      text-shadow: 0 0 20px rgba(255, 46, 99, 0.7);
       position: relative;
-      padding-bottom: 15px;
+      padding-bottom: 20px;
     }
     
     h2::after {
@@ -291,18 +387,19 @@
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
-      width: 100px;
-      height: 3px;
+      width: 150px;
+      height: 4px;
       background: linear-gradient(to right, var(--passion), var(--gold), var(--electro));
       border-radius: 3px;
     }
     
     /* === MELTING TEXT EFFECTS === */
     p, li {
-      font-size: clamp(1.1rem, 2vw, 1.2rem);
-      margin-bottom: 20px;
+      font-size: clamp(1.2rem, 2.2vw, 1.3rem);
+      margin-bottom: 25px;
       position: relative;
       z-index: 2;
+      line-height: 1.8;
     }
     
     .highlight {
@@ -335,7 +432,7 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 30px 0;
+      margin: 40px 0;
       background: rgba(40, 35, 80, 0.5);
       border-radius: 15px;
       overflow: hidden;
@@ -363,7 +460,7 @@
     }
     
     th, td {
-      padding: 15px 20px;
+      padding: 20px 25px;
       text-align: center;
       border-bottom: 1px solid rgba(176, 123, 255, 0.2);
     }
@@ -372,8 +469,8 @@
       background: rgba(138, 92, 246, 0.3);
       color: var(--gold);
       text-transform: uppercase;
-      font-size: 1.1rem;
-      letter-spacing: 1px;
+      font-size: 1.2rem;
+      letter-spacing: 1.5px;
       position: relative;
       overflow: hidden;
     }
@@ -399,13 +496,13 @@
     
     /* === LUSTY LIST STYLES === */
     ul {
-      padding-left: 25px;
-      margin: 25px 0;
+      padding-left: 30px;
+      margin: 30px 0;
     }
     
     li {
-      margin-bottom: 15px;
-      padding-left: 15px;
+      margin-bottom: 20px;
+      padding-left: 20px;
       position: relative;
       transition: all 0.3s ease;
     }
@@ -416,6 +513,7 @@
       left: -10px;
       color: var(--electro-light);
       text-shadow: 0 0 10px var(--electro);
+      font-size: 1.5rem;
     }
     
     li:hover {
@@ -426,9 +524,9 @@
     /* === DIVINE POWER STYLES === */
     .divine-power, .altar-offering, .holy-formation {
       background: rgba(50, 40, 90, 0.5);
-      padding: 25px;
+      padding: 30px;
       border-radius: 15px;
-      margin: 25px 0;
+      margin: 30px 0;
       border: 1px solid rgba(176, 123, 255, 0.4);
       box-shadow: 
         inset 0 0 20px rgba(138, 92, 246, 0.2),
@@ -446,9 +544,9 @@
     }
     
     .divine-power h3, .altar-offering h3, .holy-formation h3 {
-      font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+      font-size: clamp(1.6rem, 2.8vw, 2rem);
       color: var(--skin);
-      margin: 0 0 15px 0;
+      margin: 0 0 20px 0;
       display: flex;
       align-items: center;
       gap: 15px;
@@ -470,11 +568,11 @@
     .commandment, .prophecy, .revelation {
       background: rgba(255, 215, 0, 0.1);
       border: 1px solid var(--gold);
-      padding: 20px;
+      padding: 25px;
       border-radius: 15px;
-      margin: 25px 0;
+      margin: 30px 0;
       display: flex;
-      gap: 20px;
+      gap: 25px;
       align-items: center;
       position: relative;
       overflow: hidden;
@@ -488,9 +586,9 @@
     }
     
     .commandment i, .prophecy i, .revelation i {
-      font-size: 2.5rem;
+      font-size: 3rem;
       color: var(--gold);
-      min-width: 50px;
+      min-width: 60px;
       text-align: center;
       text-shadow: 0 0 15px var(--gold);
       animation: iconFloat 3s infinite ease-in-out;
@@ -504,9 +602,9 @@
     /* === DEVOTION GRID === */
     .devotion-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      margin-top: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
     }
     
     .devotion-link {
@@ -514,17 +612,17 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 20px;
+      gap: 25px;
       background: linear-gradient(135deg, var(--passion) 0%, var(--electro) 100%);
-      padding: 40px 20px;
+      padding: 50px 30px;
       border-radius: 20px;
       text-align: center;
       text-decoration: none;
       color: white;
       font-weight: bold;
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       transition: all 0.4s ease;
-      border: 2px solid var(--gold);
+      border: 3px solid var(--gold);
       box-shadow: 0 10px 25px rgba(138, 92, 246, 0.4);
       position: relative;
       overflow: hidden;
@@ -552,7 +650,7 @@
     }
     
     .devotion-link i {
-      font-size: 3rem;
+      font-size: 3.5rem;
       color: var(--gold);
       transition: all 0.4s ease;
     }
@@ -578,22 +676,22 @@
     .final-warning {
       background: rgba(255, 46, 99, 0.3);
       border: 1px solid var(--passion);
-      padding: 20px;
+      padding: 25px;
       border-radius: 15px;
-      margin: 30px 0;
+      margin: 40px 0;
       display: flex;
-      gap: 20px;
+      gap: 25px;
       align-items: center;
       justify-content: center;
       text-align: center;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       font-weight: bold;
       position: relative;
       overflow: hidden;
     }
     
     .final-warning i {
-      font-size: 2.5rem;
+      font-size: 3rem;
       color: var(--passion);
       animation: warningPulse 1.5s infinite alternate;
     }
@@ -627,7 +725,7 @@
     /* === FOOTER STYLES === */
     footer.footer {
       text-align: center;
-      padding: 40px 20px;
+      padding: 50px 20px;
       background: linear-gradient(to top, var(--midnight) 0%, var(--deep-sea) 100%);
       border-top: 3px solid var(--passion);
       position: relative;
@@ -635,8 +733,8 @@
     }
     
     footer p {
-      margin-bottom: 20px;
-      font-size: 1.1rem;
+      margin-bottom: 25px;
+      font-size: 1.2rem;
       position: relative;
       z-index: 2;
     }
@@ -647,12 +745,13 @@
       font-weight: bold;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 15px;
       transition: all 0.4s ease;
       position: relative;
-      padding: 10px 20px;
+      padding: 15px 30px;
       border-radius: 30px;
       overflow: hidden;
+      font-size: 1.3rem;
     }
     
     footer a::before {
@@ -688,10 +787,34 @@
     }
     
     /* === RESPONSIVE DESIGN === */
+    @media (max-width: 992px) {
+      .nav-links {
+        gap: 15px;
+      }
+      
+      .nav-link {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+      }
+      
+      .nav-cta {
+        padding: 10px 20px;
+      }
+    }
+    
     @media (max-width: 768px) {
       .hero {
-        height: 70vh;
-        min-height: 400px;
+        min-height: 600px;
+      }
+      
+      .nav-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
       }
       
       .devotion-grid {
@@ -706,26 +829,50 @@
     
     @media (max-width: 480px) {
       .hero {
-        height: 60vh;
-        min-height: 300px;
+        min-height: 500px;
+        margin-top: 100px;
       }
       
       section {
-        padding: 20px 15px;
+        padding: 25px 15px;
       }
       
       .divine-power, .altar-offering, .holy-formation {
         padding: 20px 15px;
       }
+      
+      .nav-link {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Enhanced Navigation Header -->
+  <nav class="top-nav">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <i class="fas fa-anchor logo-icon"></i>
+        <span class="logo-text">Crux Fleet Command</span>
+      </a>
+      
+      <div class="nav-links">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#" class="nav-link">Gallery</a>
+        <a href="#" class="nav-link">Builds</a>
+        <a href="#" class="nav-link">Lore</a>
+        <a href="#" class="nav-link">Team Comps</a>
+        <a href="#" class="nav-link nav-cta">Join The Fleet</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Responsive Banner -->
   <header class="hero">
     <div class="banner-container">
       <div class="banner-overlay"></div>
-      <!-- Perfectly responsive banner -->
-      <img src="public/images/beidou-banner.png" alt="Beidou commanding her ship during a storm" class="banner"/>
+      <img src="https://i.ibb.co/7Gf5Jjq/beidou-banner.jpg" alt="Beidou commanding her ship during a storm" class="banner"/>
     </div>
     <div class="hero-content">
       <h1>⚡ CAPTAIN BEIDOU ⚡</h1>
