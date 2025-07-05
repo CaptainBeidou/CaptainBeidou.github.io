@@ -1,24 +1,738 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>⚡ Divine Beidou • The Storm's Eternal Queen ⚡</title>
-  <link rel="stylesheet" href="styles/index.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* === ELECTRO SENSUAL THEME === */
+    :root {
+      --electro: #b07bff;
+      --electro-light: #c8a5ff;
+      --electro-dark: #8a5cf6;
+      --gold: #ffd700;
+      --gold-light: #ffea80;
+      --passion: #ff2e63;
+      --passion-light: #ff7c9e;
+      --midnight: #0c0b1d;
+      --deep-sea: #161240;
+      --skin: #ffd6c7;
+      --skin-shadow: #e8b8a9;
+    }
+    
+    /* === GLOBAL MELTING EFFECT === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background: radial-gradient(
+        circle at center,
+        var(--deep-sea) 0%,
+        var(--midnight) 70%
+      );
+      color: var(--skin);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      perspective: 1000px;
+    }
+    
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(
+        circle at 20% 30%,
+        rgba(176, 123, 255, 0.15) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 80% 70%,
+        rgba(255, 46, 99, 0.15) 0%,
+        transparent 40%
+      );
+      z-index: -2;
+      animation: sensualPulse 15s infinite alternate;
+    }
+    
+    @keyframes sensualPulse {
+      0% { opacity: 0.3; transform: scale(1); }
+      100% { opacity: 0.7; transform: scale(1.05); }
+    }
+    
+    /* === RESPONSIVE BANNER SOLUTION === */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      height: 80vh;
+      min-height: 500px;
+      max-height: 800px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 3px solid var(--passion);
+      box-shadow: 0 20px 50px rgba(138, 92, 246, 0.3);
+    }
+    
+.banner-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Start by centering the image. Adjust as needed. */
+  object-position: center center;
+  filter: sepia(30%) brightness(90%) contrast(110%);
+  transition: all 1s ease;
+  transform-origin: center;
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* For tablet and smaller devices */
+@media (max-width: 768px) {
+  .banner {
+    /* Prioritizes the top of the image on smaller screens */
+    object-position: top center;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+  .banner {
+    /* You might need a different position for very small screens */
+    object-position: center 20%; /* Example: 20% from the top */
+  }
+}
+    
+    /* Adjust banner focus point on mobile */
+    @media (max-width: 768px) {
+      .banner {
+        object-position: center 40%;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .banner {
+        object-position: center 50%;
+      }
+    }
+    
+    .banner-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(12, 11, 29, 0.7) 0%,
+        rgba(22, 18, 64, 0.9) 100%
+      );
+      mix-blend-mode: multiply;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 20;
+      text-align: center;
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-shadow: 0 0 15px rgba(138, 92, 246, 0.8);
+    }
+    
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 5rem);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+      color: var(--gold-light);
+      text-shadow: 
+        0 0 20px var(--passion),
+        0 0 40px var(--electro),
+        0 0 80px var(--gold);
+      animation: titleGlow 3s infinite alternate;
+      font-weight: 900;
+    }
+    
+    @keyframes titleGlow {
+      0% { text-shadow: 0 0 10px var(--passion), 0 0 20px var(--electro), 0 0 30px var(--gold); }
+      100% { text-shadow: 0 0 20px var(--passion), 0 0 40px var(--electro), 0 0 60px var(--gold); }
+    }
+    
+    .subtitle {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      margin-bottom: 30px;
+      color: var(--skin);
+      font-style: italic;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+    }
+    
+    .oath {
+      font-style: italic;
+      background: rgba(106, 17, 203, 0.3);
+      border-left: 3px solid var(--gold);
+      padding: 20px;
+      max-width: 600px;
+      margin: 30px auto 0;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      border-radius: 0 15px 15px 0;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(5px);
+      transition: all 0.5s ease;
+    }
+    
+    .oath::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+      animation: oathShimmer 5s infinite linear;
+    }
+    
+    @keyframes oathShimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    .oath:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+    }
+    
+    /* === SENSUAL SECTIONS === */
+    main {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    section {
+      background: rgba(30, 25, 60, 0.6);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 40px;
+      border: 1px solid rgba(176, 123, 255, 0.3);
+      box-shadow: 
+        0 10px 30px rgba(138, 92, 246, 0.2),
+        inset 0 0 20px rgba(255, 46, 99, 0.1);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      transition: all 0.5s ease;
+    }
+    
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 
+        0 15px 40px rgba(138, 92, 246, 0.4),
+        inset 0 0 30px rgba(255, 46, 99, 0.2);
+    }
+    
+    section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(to right, var(--passion), var(--electro));
+      filter: blur(2px);
+    }
+    
+    section::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(to right, var(--electro), var(--passion));
+      filter: blur(1px);
+    }
+    
+    h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--gold-light);
+      margin-bottom: 30px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-shadow: 0 0 15px rgba(255, 46, 99, 0.7);
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    h2::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(to right, var(--passion), var(--gold), var(--electro));
+      border-radius: 3px;
+    }
+    
+    /* === MELTING TEXT EFFECTS === */
+    p, li {
+      font-size: clamp(1.1rem, 2vw, 1.2rem);
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .highlight {
+      color: var(--gold-light);
+      font-weight: bold;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+      position: relative;
+      display: inline-block;
+    }
+    
+    .highlight::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+    
+    .highlight:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+    
+    /* === SENSUAL TABLES === */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      background: rgba(40, 35, 80, 0.5);
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    table::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, 
+        transparent 0%, 
+        rgba(176, 123, 255, 0.1) 50%, 
+        transparent 100%);
+      animation: tableShimmer 8s infinite linear;
+    }
+    
+    @keyframes tableShimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    th, td {
+      padding: 15px 20px;
+      text-align: center;
+      border-bottom: 1px solid rgba(176, 123, 255, 0.2);
+    }
+    
+    th {
+      background: rgba(138, 92, 246, 0.3);
+      color: var(--gold);
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    th::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to right, var(--passion), var(--gold));
+    }
+    
+    tr {
+      transition: all 0.3s ease;
+    }
+    
+    tr:hover {
+      background: rgba(255, 46, 99, 0.1);
+      transform: scale(1.01);
+    }
+    
+    /* === LUSTY LIST STYLES === */
+    ul {
+      padding-left: 25px;
+      margin: 25px 0;
+    }
+    
+    li {
+      margin-bottom: 15px;
+      padding-left: 15px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    li::before {
+      content: "⚡";
+      position: absolute;
+      left: -10px;
+      color: var(--electro-light);
+      text-shadow: 0 0 10px var(--electro);
+    }
+    
+    li:hover {
+      transform: translateX(10px);
+      color: var(--gold-light);
+    }
+    
+    /* === DIVINE POWER STYLES === */
+    .divine-power, .altar-offering, .holy-formation {
+      background: rgba(50, 40, 90, 0.5);
+      padding: 25px;
+      border-radius: 15px;
+      margin: 25px 0;
+      border: 1px solid rgba(176, 123, 255, 0.4);
+      box-shadow: 
+        inset 0 0 20px rgba(138, 92, 246, 0.2),
+        0 5px 15px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+    
+    .divine-power:hover, .altar-offering:hover, .holy-formation:hover {
+      transform: translateY(-3px);
+      box-shadow: 
+        inset 0 0 30px rgba(138, 92, 246, 0.3),
+        0 8px 25px rgba(138, 92, 246, 0.3);
+    }
+    
+    .divine-power h3, .altar-offering h3, .holy-formation h3 {
+      font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+      color: var(--skin);
+      margin: 0 0 15px 0;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+    
+    .divine-power h3 i, .altar-offering h3 i, .holy-formation h3 i {
+      color: var(--gold);
+      text-shadow: 0 0 15px var(--gold);
+      animation: iconPulse 2s infinite alternate;
+    }
+    
+    @keyframes iconPulse {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.1); }
+    }
+    
+    /* === COMMANDMENTS & PROPHECIES === */
+    .commandment, .prophecy, .revelation {
+      background: rgba(255, 215, 0, 0.1);
+      border: 1px solid var(--gold);
+      padding: 20px;
+      border-radius: 15px;
+      margin: 25px 0;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(5px);
+      transition: all 0.4s ease;
+    }
+    
+    .commandment:hover, .prophecy:hover, .revelation:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+    }
+    
+    .commandment i, .prophecy i, .revelation i {
+      font-size: 2.5rem;
+      color: var(--gold);
+      min-width: 50px;
+      text-align: center;
+      text-shadow: 0 0 15px var(--gold);
+      animation: iconFloat 3s infinite ease-in-out;
+    }
+    
+    @keyframes iconFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    /* === DEVOTION GRID === */
+    .devotion-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+    
+    .devotion-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      background: linear-gradient(135deg, var(--passion) 0%, var(--electro) 100%);
+      padding: 40px 20px;
+      border-radius: 20px;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1.3rem;
+      transition: all 0.4s ease;
+      border: 2px solid var(--gold);
+      box-shadow: 0 10px 25px rgba(138, 92, 246, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .devotion-link::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        135deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 100%
+      );
+      animation: devotionShimmer 6s infinite linear;
+    }
+    
+    @keyframes devotionShimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    .devotion-link i {
+      font-size: 3rem;
+      color: var(--gold);
+      transition: all 0.4s ease;
+    }
+    
+    .devotion-link span {
+      position: relative;
+      z-index: 2;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+    
+    .devotion-link:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 15px 40px rgba(138, 92, 246, 0.7);
+    }
+    
+    .devotion-link:hover i {
+      transform: scale(1.2) rotate(5deg);
+      color: var(--gold-light);
+      text-shadow: 0 0 20px var(--gold);
+    }
+    
+    /* === FINAL WARNING === */
+    .final-warning {
+      background: rgba(255, 46, 99, 0.3);
+      border: 1px solid var(--passion);
+      padding: 20px;
+      border-radius: 15px;
+      margin: 30px 0;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .final-warning i {
+      font-size: 2.5rem;
+      color: var(--passion);
+      animation: warningPulse 1.5s infinite alternate;
+    }
+    
+    @keyframes warningPulse {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.2); }
+    }
+    
+    .final-warning::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 46, 99, 0.2) 50%,
+        transparent 100%
+      );
+      animation: warningShimmer 4s infinite linear;
+    }
+    
+    @keyframes warningShimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    /* === FOOTER STYLES === */
+    footer.footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(to top, var(--midnight) 0%, var(--deep-sea) 100%);
+      border-top: 3px solid var(--passion);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    footer p {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      position: relative;
+      z-index: 2;
+    }
+    
+    footer a {
+      color: var(--gold-light);
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.4s ease;
+      position: relative;
+      padding: 10px 20px;
+      border-radius: 30px;
+      overflow: hidden;
+    }
+    
+    footer a::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 215, 0, 0.1);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.4s ease;
+    }
+    
+    footer a:hover {
+      color: var(--skin);
+      text-shadow: 0 0 15px var(--passion);
+    }
+    
+    footer a:hover::before {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+    
+    footer a i {
+      transition: all 0.4s ease;
+    }
+    
+    footer a:hover i {
+      transform: rotate(15deg) scale(1.2);
+      color: var(--passion-light);
+    }
+    
+    /* === RESPONSIVE DESIGN === */
+    @media (max-width: 768px) {
+      .hero {
+        height: 70vh;
+        min-height: 400px;
+      }
+      
+      .devotion-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .commandment, .prophecy, .revelation {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero {
+        height: 60vh;
+        min-height: 300px;
+      }
+      
+      section {
+        padding: 20px 15px;
+      }
+      
+      .divine-power, .altar-offering, .holy-formation {
+        padding: 20px 15px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="hero">
-    <div class="crowning-glory">
-      <i class="fa-solid fa-crown"></i>
-      <i class="fa-solid fa-bolt"></i>
-      <i class="fa-solid fa-anchor"></i>
+    <div class="banner-container">
+      <div class="banner-overlay"></div>
+      <!-- Perfectly responsive banner -->
+      <img src="public/images/beidou-banner.jpg" alt="Beidou commanding her ship during a storm" class="banner"/>
     </div>
-    <img src="public/images/beidou-banner.png" alt="Beidou banner" class="banner"/>
-    <h1>⚡ CAPTAIN BEIDOU ⚡</h1>
-    <p class="subtitle">THE UNCHALLENGED EMPRESS OF THE SEVEN SEAS • CLAYMORE GODDESS • ETERNAL STORM SOVEREIGN</p>
-    <div class="oath">
-      "I swear allegiance to Her Majesty's fleet - through thunder and tide, until my final breath."
+    <div class="hero-content">
+      <h1>⚡ CAPTAIN BEIDOU ⚡</h1>
+      <p class="subtitle">THE UNCHALLENGED EMPRESS OF THE SEVEN SEAS • CLAYMORE GODDESS • ETERNAL STORM SOVEREIGN</p>
+      <div class="oath">
+        "I swear allegiance to Her Majesty's fleet - through thunder and tide, until my final breath."
+      </div>
     </div>
   </header>
 
@@ -30,7 +744,7 @@
       </p>
       <div class="commandment">
         <i class="fa-solid fa-scale-balanced"></i>
-        <strong>Her Sacred Commandment:</strong> "A true captain goes down with their ship? Nonsense. A true captain makes sure the ship never sinks!"
+        <div><strong>Her Sacred Commandment:</strong> "A true captain goes down with their ship? Nonsense. A true captain makes sure the ship never sinks!"</div>
       </div>
     </section>
 
@@ -47,14 +761,17 @@
 
     <section class="talents">
       <h2>⚡ CELESTIAL MANIFESTATIONS ⚡</h2>
+      
       <div class="divine-power">
         <h3><i class="fa-solid fa-water"></i> OCEANBORNE (Divine Strikes)</h3>
         <p>Five world-shattering strikes that make the ocean itself recoil. Her charged attacks <span class="highlight">carve canyons in the seafloor</span>, while plunging attacks create maelstroms that swallow fleets whole.</p>
       </div>
+      
       <div class="divine-power">
         <h3><i class="fa-solid fa-shield-halved"></i> TIDECALLER (The Perfect Counter)</h3>
         <p>Beidou's legendary parry - a technique so perfect it <span class="highlight">defies cosmic law</span>. With timing known only to gods, she turns enemy assaults into thunderous retribution. Witnessing a perfect counter makes even Archons applaud.</p>
       </div>
+      
       <div class="divine-power">
         <h3><i class="fa-solid fa-cloud-bolt"></i> STORMBREAKER (Her Divine Wrath)</h3>
         <p>When Beidou unleashes the Thunderbeast's Targe, reality trembles. For 15 glorious seconds, her lightning dances across the battlefield like <span class="highlight">electro serpents devouring her foes</span>. At C6, this power shreds enemy resistances like paper.</p>
@@ -63,6 +780,7 @@
 
     <section class="build">
       <h2>💎 SACRED RELICS & VESTMENTS</h2>
+      
       <div class="altar-offering">
         <h3><i class="fa-solid fa-gem"></i> WEAPONS WORTHY OF A GODDESS</h3>
         <ul>
@@ -71,6 +789,7 @@
           <li><strong>Serpent Spine/Prototype Archaic:</strong> Mortal-crafted but blessed by her touch - they weep when unused</li>
         </ul>
       </div>
+
       <div class="altar-offering">
         <h3><i class="fa-solid fa-vest"></i> ARTIFACTS OF ADORATION</h3>
         <ul>
@@ -78,6 +797,7 @@
           <li><strong>2-pc Thundering Fury + 2-pc Gladiator:</strong> For when she graces the battlefield personally - makes thunderstorms seem like gentle rain</li>
         </ul>
       </div>
+
       <div class="sacred-priority">
         <h3><i class="fa-solid fa-arrow-up-1-9"></i> STAT HIERARCHY</h3>
         <p>Energy Recharge (to bask in her glory more often) → CRIT Rate/DMG (for heavenly smiting) → ATK% (for armadas trembling at her approach) → Elemental Mastery (to enhance her divine reactions)</p>
@@ -87,17 +807,20 @@
     <section class="teams">
       <h2>🙏 BLESSED COVENANTS (Team Comps)</h2>
       <p>To stand beside Beidou is the highest honor. Her divine energy requires acolytes like Fischl or Yae Miko who live to serve her burst needs.</p>
+      
       <div class="holy-formation">
         <h3><i class="fa-solid fa-bolt"></i> THE THUNDER COVENANT</h3>
         <p>Beidou + Fischl + Tartaglia + Bennett - Where electro-charged devastation becomes <span class="highlight">religious experience</span></p>
       </div>
+      
       <div class="holy-formation">
         <h3><i class="fa-solid fa-snowflake"></i> THE FROZEN CHOSEN</h3>
         <p>Beidou + Eula + Diona + Raiden - Superconduct rituals that make glaciers shatter in reverence</p>
       </div>
+      
       <div class="prophecy">
         <i class="fa-solid fa-scroll"></i>
-        <strong>Ancient Teyvat Prophecy:</strong> "When the Uncrowned Queen sails with the Electro Archon, the sea itself shall part in permanent reverence"
+        <div><strong>Ancient Teyvat Prophecy:</strong> "When the Uncrowned Queen sails with the Electro Archon, the sea itself shall part in permanent reverence"</div>
       </div>
     </section>
 
@@ -109,9 +832,10 @@
         <li><strong>C4: Electro Epiphany</strong> - +20% Electro DMG after being hit (insult only fuels her divinity)</li>
         <li><strong>C6: Thunder God's Decree</strong> - -15% Electro RES on enemies (final proof of her celestial authority)</li>
       </ul>
+      
       <div class="revelation">
         <i class="fa-solid fa-star"></i>
-        At C6, witnesses report the sky parts and a heavenly choir sings the Crux Fleet shanty
+        <div>At C6, witnesses report the sky parts and a heavenly choir sings the Crux Fleet shanty</div>
       </div>
     </section>
 
@@ -146,5 +870,8 @@
     <p>Beneath thunder and tide, she reigns eternal... Will you answer her call?</p>
     <p><a href="mailto:beidou@liyueharbor.io"><i class="fa-solid fa-envelope-circle-check"></i> Send Devotional Offerings (or emergency hugs)</a></p>
   </footer>
+
+  <!-- Font Awesome for icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </body>
 </html>
