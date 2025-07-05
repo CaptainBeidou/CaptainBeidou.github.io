@@ -138,3 +138,16 @@ body::after {
     0% { transform: translate(0, 0); }
     100% { transform: translate(-500px, -500px); }
 }
+
+.content-section, .dps-card, .timeline-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.content-section.is-visible, 
+.dps-card.is-visible, 
+.timeline-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
