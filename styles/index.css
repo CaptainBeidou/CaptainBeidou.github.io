@@ -1,217 +1,670 @@
-/* === Divine Theme: Beidou, Empress of Storms === */
-
+/* styles/index.css */
 :root {
-  --main-color: #8b3a62;
-  --highlight: #ffaad4;
-  --background: #1b1425;
-  --text: #fdf0f9;
-  --accent: #e4bfff;
-  --lightning: #bfa9ff;
+  --electro: #b07bff;
+  --electro-light: #c8a5ff;
+  --electro-dark: #8a5cf6;
   --gold: #ffd700;
+  --gold-light: #ffea80;
+  --passion: #ff2e63;
+  --passion-light: #ff7c9e;
+  --midnight: #0c0b1d;
+  --deep-sea: #161240;
+  --skin: #ffd6c7;
+  --skin-shadow: #e8b8a9;
 }
 
+/* === GLOBAL MELTING EFFECT === */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Cinzel Decorative', serif;
-  background: var(--background);
-  color: var(--text);
-  line-height: 1.7;
+  background: radial-gradient(
+    circle at center,
+    var(--deep-sea) 0%,
+    var(--midnight) 70%
+  );
+  color: var(--skin);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
   overflow-x: hidden;
+  position: relative;
+  perspective: 1000px;
 }
 
-h1, h2, h3 {
-  color: var(--gold);
-  text-shadow: 0 0 10px var(--highlight), 0 0 20px var(--lightning);
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 20% 30%,
+    rgba(176, 123, 255, 0.15) 0%,
+    transparent 40%
+  ),
+  radial-gradient(
+    circle at 80% 70%,
+    rgba(255, 46, 99, 0.15) 0%,
+    transparent 40%
+  );
+  z-index: -2;
+  animation: sensualPulse 15s infinite alternate;
 }
 
-a {
-  color: var(--highlight);
-  text-decoration: none;
+@keyframes sensualPulse {
+  0% { opacity: 0.3; transform: scale(1); }
+  100% { opacity: 0.7; transform: scale(1.05); }
 }
 
-a:hover {
-  color: var(--gold);
-  text-shadow: 0 0 5px var(--highlight);
-}
-
-/* === Hero === */
+/* === LIQUID HEADER === */
 .hero {
-  text-align: center;
-  background: linear-gradient(to bottom, #2c1d33, #1b1425);
-  padding: 2rem 1rem;
-  border-bottom: 2px solid var(--lightning);
+  position: relative;
+  overflow: hidden;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 3px solid var(--passion);
+  box-shadow: 0 20px 50px rgba(138, 92, 246, 0.3);
+}
+
+.banner-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .banner {
   width: 100%;
-  max-height: 300px;
+  height: 100%;
   object-fit: cover;
-  border-radius: 1rem;
-  margin-bottom: 1rem;
-  box-shadow: 0 0 20px var(--lightning);
+  object-position: center;
+  filter: sepia(30%) brightness(90%) contrast(110%);
+  transition: all 1s ease;
+  transform-origin: center;
 }
 
-.crowning-glory {
-  font-size: 2rem;
-  color: var(--gold);
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  animation: pulse-glow 3s ease-in-out infinite;
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(12, 11, 29, 0.7) 0%,
+    rgba(22, 18, 64, 0.9) 100%
+  );
+  mix-blend-mode: multiply;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 20;
+  text-align: center;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-shadow: 0 0 15px rgba(138, 92, 246, 0.8);
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 7vw, 5rem);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  color: var(--gold-light);
+  text-shadow: 
+    0 0 20px var(--passion),
+    0 0 40px var(--electro),
+    0 0 80px var(--gold);
+  animation: titleGlow 3s infinite alternate;
+  font-weight: 900;
+}
+
+@keyframes titleGlow {
+  0% { text-shadow: 0 0 10px var(--passion), 0 0 20px var(--electro), 0 0 30px var(--gold); }
+  100% { text-shadow: 0 0 20px var(--passion), 0 0 40px var(--electro), 0 0 60px var(--gold); }
 }
 
 .subtitle {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  margin-bottom: 30px;
+  color: var(--skin);
   font-style: italic;
-  font-size: 1.2rem;
-  color: var(--accent);
-  margin-top: -0.5rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
 }
 
 .oath {
-  margin-top: 1rem;
-  font-size: 1.1rem;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1rem;
-  border-left: 4px solid var(--highlight);
   font-style: italic;
+  background: rgba(106, 17, 203, 0.3);
+  border-left: 3px solid var(--gold);
+  padding: 20px;
+  max-width: 600px;
+  margin: 30px auto 0;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  border-radius: 0 15px 15px 0;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  transition: all 0.5s ease;
 }
 
-/* === Sections === */
-main section {
-  padding: 2rem;
-  margin: 2rem auto;
-  max-width: 1000px;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 1rem;
-  box-shadow: 0 0 10px rgba(255, 170, 212, 0.1);
+.oath::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+  animation: oathShimmer 5s infinite linear;
+}
+
+@keyframes oathShimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.oath:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+/* === SENSUAL SECTIONS === */
+main {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section {
+  background: rgba(30, 25, 60, 0.6);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 40px;
+  border: 1px solid rgba(176, 123, 255, 0.3);
+  box-shadow: 
+    0 10px 30px rgba(138, 92, 246, 0.2),
+    inset 0 0 20px rgba(255, 46, 99, 0.1);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.5s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 15px 40px rgba(138, 92, 246, 0.4),
+    inset 0 0 30px rgba(255, 46, 99, 0.2);
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, var(--passion), var(--electro));
+  filter: blur(2px);
+}
+
+section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, var(--electro), var(--passion));
+  filter: blur(1px);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--gold-light);
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 0 15px rgba(255, 46, 99, 0.7);
+  position: relative;
+  padding-bottom: 15px;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(to right, var(--passion), var(--gold), var(--electro));
+  border-radius: 3px;
+}
+
+/* === MELTING TEXT EFFECTS === */
+p, li {
+  font-size: clamp(1.1rem, 2vw, 1.2rem);
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
 }
 
 .highlight {
-  color: var(--highlight);
+  color: var(--gold-light);
   font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  position: relative;
+  display: inline-block;
 }
 
-.commandment,
-.prophecy,
-.revelation {
-  background: rgba(255, 255, 255, 0.06);
-  padding: 1rem;
-  margin: 1rem 0;
-  border-left: 5px solid var(--lightning);
-  font-style: italic;
+.highlight::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
 }
 
-/* === Table Styling === */
+.highlight:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* === SENSUAL TABLES === */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
+  margin: 30px 0;
+  background: rgba(40, 35, 80, 0.5);
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+table::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    transparent 0%, 
+    rgba(176, 123, 255, 0.1) 50%, 
+    transparent 100%);
+  animation: tableShimmer 8s infinite linear;
+}
+
+@keyframes tableShimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
 th, td {
-  border: 1px solid var(--highlight);
-  padding: 0.75rem;
+  padding: 15px 20px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(176, 123, 255, 0.2);
 }
 
 th {
-  background: var(--highlight);
-  color: var(--background);
+  background: rgba(138, 92, 246, 0.3);
+  color: var(--gold);
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
 }
 
-.footnote {
-  font-size: 0.9rem;
-  color: var(--accent);
-  text-align: center;
-  margin-top: 1rem;
+th::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, var(--passion), var(--gold));
 }
 
-/* === Talent & Build Sections === */
-.divine-power,
-.altar-offering,
-.sacred-priority,
-.holy-formation {
-  margin: 1.5rem 0;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.04);
-  border-left: 5px solid var(--accent);
-  border-radius: 0.5rem;
+tr {
+  transition: all 0.3s ease;
 }
 
+tr:hover {
+  background: rgba(255, 46, 99, 0.1);
+  transform: scale(1.01);
+}
+
+/* === LUSTY LIST STYLES === */
 ul {
-  list-style-type: "⚡ ";
-  padding-left: 1.5rem;
+  padding-left: 25px;
+  margin: 25px 0;
 }
 
-/* === CTA Buttons === */
+li {
+  margin-bottom: 15px;
+  padding-left: 15px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+li::before {
+  content: "⚡";
+  position: absolute;
+  left: -10px;
+  color: var(--electro-light);
+  text-shadow: 0 0 10px var(--electro);
+}
+
+li:hover {
+  transform: translateX(10px);
+  color: var(--gold-light);
+}
+
+/* === DIVINE POWER STYLES === */
+.divine-power, .altar-offering, .holy-formation {
+  background: rgba(50, 40, 90, 0.5);
+  padding: 25px;
+  border-radius: 15px;
+  margin: 25px 0;
+  border: 1px solid rgba(176, 123, 255, 0.4);
+  box-shadow: 
+    inset 0 0 20px rgba(138, 92, 246, 0.2),
+    0 5px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.divine-power:hover, .altar-offering:hover, .holy-formation:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    inset 0 0 30px rgba(138, 92, 246, 0.3),
+    0 8px 25px rgba(138, 92, 246, 0.3);
+}
+
+.divine-power h3, .altar-offering h3, .holy-formation h3 {
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  color: var(--skin);
+  margin: 0 0 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.divine-power h3 i, .altar-offering h3 i, .holy-formation h3 i {
+  color: var(--gold);
+  text-shadow: 0 0 15px var(--gold);
+  animation: iconPulse 2s infinite alternate;
+}
+
+@keyframes iconPulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+/* === COMMANDMENTS & PROPHECIES === */
+.commandment, .prophecy, .revelation {
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid var(--gold);
+  padding: 20px;
+  border-radius: 15px;
+  margin: 25px 0;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  transition: all 0.4s ease;
+}
+
+.commandment:hover, .prophecy:hover, .revelation:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+}
+
+.commandment i, .prophecy i, .revelation i {
+  font-size: 2.5rem;
+  color: var(--gold);
+  min-width: 50px;
+  text-align: center;
+  text-shadow: 0 0 15px var(--gold);
+  animation: iconFloat 3s infinite ease-in-out;
+}
+
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* === DEVOTION GRID === */
 .devotion-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
 }
 
 .devotion-link {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 1rem;
-  border: 1px solid var(--lightning);
-  transition: all 0.3s ease-in-out;
+  justify-content: center;
+  gap: 20px;
+  background: linear-gradient(135deg, var(--passion) 0%, var(--electro) 100%);
+  padding: 40px 20px;
+  border-radius: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.3rem;
+  transition: all 0.4s ease;
+  border: 2px solid var(--gold);
+  box-shadow: 0 10px 25px rgba(138, 92, 246, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.devotion-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  animation: devotionShimmer 6s infinite linear;
+}
+
+@keyframes devotionShimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.devotion-link i {
+  font-size: 3rem;
+  color: var(--gold);
+  transition: all 0.4s ease;
+}
+
+.devotion-link span {
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .devotion-link:hover {
-  background: var(--highlight);
-  color: var(--background);
-  transform: scale(1.05);
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(138, 92, 246, 0.7);
 }
 
-/* === Footer === */
-.footer {
-  text-align: center;
-  padding: 2rem;
-  background: #140e1d;
-  border-top: 2px solid var(--lightning);
-  font-size: 0.95rem;
-  color: var(--accent);
+.devotion-link:hover i {
+  transform: scale(1.2) rotate(5deg);
+  color: var(--gold-light);
+  text-shadow: 0 0 20px var(--gold);
 }
 
+/* === FINAL WARNING === */
 .final-warning {
-  margin-bottom: 1rem;
-  color: var(--gold);
+  background: rgba(255, 46, 99, 0.3);
+  border: 1px solid var(--passion);
+  padding: 20px;
+  border-radius: 15px;
+  margin: 30px 0;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.2rem;
   font-weight: bold;
+  position: relative;
+  overflow: hidden;
 }
 
-/* === Animations === */
-@keyframes pulse-glow {
-  0% {
-    text-shadow: 0 0 5px var(--gold), 0 0 10px var(--highlight);
-  }
-  50% {
-    text-shadow: 0 0 20px var(--highlight), 0 0 40px var(--lightning);
-  }
-  100% {
-    text-shadow: 0 0 5px var(--gold), 0 0 10px var(--highlight);
-  }
+.final-warning i {
+  font-size: 2.5rem;
+  color: var(--passion);
+  animation: warningPulse 1.5s infinite alternate;
 }
 
-/* === Responsive Grace === */
+@keyframes warningPulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.2); }
+}
+
+.final-warning::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 46, 99, 0.2) 50%,
+    transparent 100%
+  );
+  animation: warningShimmer 4s infinite linear;
+}
+
+@keyframes warningShimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* === FOOTER STYLES === */
+footer.footer {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(to top, var(--midnight) 0%, var(--deep-sea) 100%);
+  border-top: 3px solid var(--passion);
+  position: relative;
+  overflow: hidden;
+}
+
+footer p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 2;
+}
+
+footer a {
+  color: var(--gold-light);
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.4s ease;
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+footer a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 215, 0, 0.1);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+}
+
+footer a:hover {
+  color: var(--skin);
+  text-shadow: 0 0 15px var(--passion);
+}
+
+footer a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+footer a i {
+  transition: all 0.4s ease;
+}
+
+footer a:hover i {
+  transform: rotate(15deg) scale(1.2);
+  color: var(--passion-light);
+}
+
+/* === RESPONSIVE DESIGN === */
 @media (max-width: 768px) {
-  .banner {
-    max-height: 200px;
+  .hero {
+    height: 70vh;
   }
-  h1 {
-    font-size: 1.8rem;
-  }
-  h2 {
-    font-size: 1.3rem;
-  }
+  
   .devotion-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .commandment, .prophecy, .revelation {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 60vh;
+  }
+  
+  section {
+    padding: 20px 15px;
+  }
+  
+  .divine-power, .altar-offering, .holy-formation {
+    padding: 20px 15px;
   }
 }
