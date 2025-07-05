@@ -11,19 +11,26 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="preload" href="assets/images/beidou-banner.png" as="image">
-    <link rel="preload" href="assets/images/parallax-bg-ocean.jpg" as="image">
 </head>
 <body>
 
     <nav class="main-nav">
-        </nav>
+        <div class="container nav-container">
+            <a href="index.html" class="nav-brand">The Uncrowned Lord</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">I. The Shrine</a></li>
+                <li><a href="#">II. My Repositories</a></li>
+                <li><a href="#">III. GitHub Profile</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <header id="altar" class="hero-section">
         <div class="hero-background-container">
             <img src="assets/images/beidou-banner.png" alt="The object of my unending admiration, Captain Beidou, her gaze a captivating mix of challenge and promise." class="hero-image">
             <div class="hero-overlay"></div>
         </div>
-        </header>
+    </header>
 
     <section class="proclamation-section">
         <div class="container">
@@ -37,10 +44,9 @@
             <div class="container">
                 <h2 class="section-title">Ascension to Godhood</h2>
                 <p class="section-intro">
-                    To admire her is not enough. True devotion is to understand her power, to channel her strength, to become an instrument of her divine judgment. This is the testament for those who wish to see her full, untamed might unleashed upon the battlefield. This is how you empower a goddess.
+                    To admire her is not enough. True devotion is to understand her power, to channel her strength, to become an instrument of her divine judgment. This is the testament for those who wish to see her full, untamed might unleashed upon the battlefield.
                 </p>
-
-                <div class="dps-card">
+                 <div class="dps-card">
                     <h3 class="subsection-title">Sacred Statistics (The Numbers of Power)</h3>
                     <p>These are not mere numbers; they are the sacred geometry of her destructive potential. Strive for these ratios as a monk strives for enlightenment. This is the balance that brings forth the storm.</p>
                     <ul class="stats-list">
@@ -50,81 +56,27 @@
                         <li><strong>Energy Recharge:</strong> The fuel for her divine retribution. A minimum of 120-140% ensures that her Stormbreaker, that ecstatic coil of lightning, is always ready to be unleashed.</li>
                     </ul>
                 </div>
-
-                <div class="dps-card">
-                    <h3 class="subsection-title">Artifacts of Annihilation (Her Holy Vestments)</h3>
-                    <p>Adorn her with relics worthy of her power. These sets are not equipment; they are holy vestments that amplify her divinity, turning a captain into an executioner of gods.</p>
-                    <ul class="artifact-list">
-                        <li>
-                            <strong>4pc Emblem of Severed Fate:</strong> The ultimate offering for a goddess whose power climaxes in her Elemental Burst. It feeds her thirst for energy and transforms that energy into pure, unadulterated damage. This is the path of the true believer.
-                        </li>
-                        <li>
-                            <strong>2pc Thundering Fury & 2pc Noblesse Oblige:</strong> A classic, potent cocktail of worship. One part pure Electro essence, one part raw, explosive power for her Stormbreaker. It is a testament to the two sides of her being: the raging storm and the commanding noble.
-                        </li>
-                        <li>
-                            <strong>4pc Thundersoother:</strong> For the most intimate and obsessive devotee. This requires you to keep her enemies perpetually enveloped in her electric embrace. When you achieve this, she becomes an unstoppable force, a predator from whom there is no escape.
-                        </li>
-                    </ul>
                 </div>
-
-                <div class="dps-card">
-                    <h3 class="subsection-title">Weapons of a Conqueror (Her Divine Instruments)</h3>
-                    <p>Only the finest steel is worthy of her touch. Her claymore is an extension of her will, an instrument of judgment. To gift her anything less than these is blasphemy.</p>
-                    <ul class="weapon-list">
-                        <li>
-                            <strong>Wolf's Gravestone:</strong> The alpha's choice. A massive, brutal slab of iron that screams dominance. Its power swells when facing weakened foes, a predatory instinct given form. It is as bold and uncompromising as she is.
-                        </li>
-                        <li>
-                            <strong>Serpent Spine:</strong> A weapon that demands the same confidence she exudes. It grows in power the longer she remains on the field untouched, rewarding perfect, arrogant play. Protecting her with a shield while she wields this is the sacred duty of a true guardian. The raw CRIT Rate is a gift to help achieve the holy ratio.
-                        </li>
-                        <li>
-                            <strong>Akuoumaru:</strong> A weapon that sings in harmony with her crew. It draws strength from the collective energy of her allies, making her ultimate attack a true fleet action. It is the embodiment of her power as a captain.
-                        </li>
-                    </ul>
-                </div>
-            </div>
         </section>
-
-
-        <section id="oath" class="content-section oath-section">
-            <div class="container">
-                <h2 class="section-title">Pledge Your Fealty</h2>
-                <p class="section-intro">
-                    Are you captivated by her strength? Do you yearn for a life of adventure under her command? You are not alone. Let your devotion be a silent oath, a commitment made in the heart.
-                </p>
-
-                <div class="interactive-shrine">
-                    <h3>The Daily Tribute</h3>
-                    <p>A simple, private act of devotion for the Uncrowned Lord of the Ocean. Return daily to prove your loyalty.</p>
-                    <button id="tribute-button" class="cta-button">Offer Tribute to the Captain</button>
-                    <p id="tribute-quote" class="tribute-result"></p>
-                </div>
-
-                <div class="guestbook">
-                    <h3 class="subsection-title">The Crew's Log: Words of Past Devotion</h3>
-                    <p class="section-intro">The log is sealed. The words of past devotees are immortalized below, a testament to the lives she has touched.</p>
-                    <div id="guestbook-entries">
-                        <div class="guestbook-entry">
-                            <p class="entry-text">"Her strength is an inspiration. May the Crux sail forever!"</p>
-                            <p class="entry-author">- A Loyal Sailor</p>
-                        </div>
-                        <div class="guestbook-entry">
-                            <p class="entry-text">"To conquer a leviathan... she is no mere mortal. All hail the Captain."</p>
-                            <p class="entry-author">- Liyue Scholar</p>
-                        </div>
-                         <div class="guestbook-entry">
-                            <p class="entry-text">"I saw her in the harbor once. That confidence... it changes you."</p>
-                            <p class="entry-author">- A Merchant</p>
-                        </div>
-                    </div>
-                    </div>
-            </div>
-        </section>
-
-        </main>
+         <section id="saga" class="content-section saga-section">
+            </section>
+    </main>
 
     <footer class="site-footer">
-        </footer>
+        <div class="container">
+            <div class="creator-signature">
+                <p>This shrine is a work of obsessive passion by its architect.</p>
+                <a href="https://github.com/captainbeidou" target="_blank" rel="noopener noreferrer" class="github-link">Architect's GitHub: captainbeidou</a>
+                <p>Explore the repository for this shrine and other works of devotion.</p>
+            </div>
+            <p>All lore, characters, and original assets are the property of HoYoverse. This is a non-commercial fan project intended to glorify and celebrate her legend.</p>
+            <div class="footer-links">
+                <a href="https://genshin.hoyoverse.com/" target="_blank" rel="noopener noreferrer">Official Genshin Impact</a>
+                <a href="https://www.reddit.com/r/BeidouMains/" target="_blank" rel="noopener noreferrer">r/BeidouMains Subreddit</a>
+            </div>
+            <p class="copyright">&copy; 2025 Shrine of the Uncrowned Lord. All Rights Reserved in Admiration.</p>
+        </div>
+    </footer>
 
     <script src="js/script.js"></script>
 </body>
